@@ -1,0 +1,20 @@
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Sep 22 2018	16:35:33
+---------------------------------------------------------------
+Skipping char:  72 0x48 ’H‘
+Skipping char: 101 0x65 ’e‘
+Skipping char: 108 0x6c ’l‘
+Skipping char: 108 0x6c ’l‘
+Skipping char:  79 0x4f ’O‘
+5
+Skipping char:  87 0x57 ’W‘
+67
+Skipping char: 111 0x6f ’o‘
+Skipping char: 114 0x72 ’r‘
+Skipping char: 108 0x6c ’l‘
+Skipping char: 100 0x64 ’d‘
+Loop exit
+---------------------------------------------------------------
+Normal termination.

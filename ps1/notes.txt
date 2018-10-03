@@ -1,0 +1,51 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 1		   notes.txt
+// Author: Hao Wu 
+// Date: September 10, 2018.
+// ------------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 1 for CPSC 527: Object-Oriented Programming
+class, Fall 2018. The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/attach/ho02.html. 
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp ------ Main function, which asks for user information and 
+				prints relavant age message.
+tools.cpp ----- C++ tools library implementation files.
+tools.hpp ----- Header file for the C++ tools library.
+aboutme ------- Execution file
+aboutme.out --- Output file including 4 test cases.
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./aboutme to execute.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I want to acknowledge cplusplus.com for the following C++ references.
+http://www.cplusplus.com/reference/ctime/localtime/
+http://www.cplusplus.com/reference/istream/istream/ignore/
+http://www.cplusplus.com/reference/cstdio/getchar/
+
+------------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+This program handles the exception by using fatal() function.
+If the user type in a wrong type of input, for example,
+a string for year of birth, the program will report error.
+by asking the user to retype the year of birth information, 
+if the previous one is not a valid number.
+
+The program will consider "199x" (non-number after number) and 
+"1990 "(space after number) as invalid inputs and ask user to reenter.
+
+
+

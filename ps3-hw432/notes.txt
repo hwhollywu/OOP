@@ -1,0 +1,50 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 3		 notes.txt
+// Author: Hao Wu 
+// Date: September 30, 2018.
+// ------------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 3 for CPSC 527: Object-Oriented Programming
+class, Fall 2018. The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho05.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp -------- Main function.
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+flipflop.cpp ---- Single flip-flop used in think-a-dot game.
+flipflop.hpp ---- Header file for a flip-flop model.
+game.cpp -------- Function to start a think-a-dot game.
+game.hpp -------- Header file for the game.
+thinkadot.cpp --- Think-a-dot model implementation files.
+thinkadot.hpp --- Header file for a think-a-dot model.
+tad ------------- Execution file.
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./tad to execute.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I want to acknowledge cplusplus.com for the following C++ references.
+http://www.cplusplus.com/reference/cctype/toupper/
+
+------------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+The think-a-dot game takes in single letter commands from user
+including 'A','B','C','L','R','H','Q'.
+It handles multiple valid commands at the same time.
+For example, input 'aaa' will result as inputting to hole 'A'
+three times.
+
+
+

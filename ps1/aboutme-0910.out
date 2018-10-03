@@ -1,0 +1,74 @@
+
+// ----------------------------------------------------------
+// Test/Output file for Problem Set 1		   aboutme.output
+// Author: Hao Wu 
+// Date: September 10, 2018.
+// ------------------------------------------------------------
+
+
+test1 (valid)
+Input: Hao, Wu, 1996
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Sep  8 2018	17:56:26
+---------------------------------------------------------------
+Please enter your first name: Hao
+Please enter your last name: Wu
+Please enter the year of your birth: 1996
+Hao Wu becomes 22 years old in 2018.
+---------------------------------------------------------------
+Normal termination.
+
+
+test2 (valid)
+Input: Michael, Fischer, 1942
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Sep  8 2018	18:18:14
+---------------------------------------------------------------
+Please enter your first name: Michael  
+Please enter your last name: Fischer
+Please enter the year of your birth: 1942
+Michael Fischer becomes 76 years old in 2018.
+---------------------------------------------------------------
+Normal termination.
+
+
+test3 (invalid)
+Input: Mike, Ma, Hi, No, 2000
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Sep  8 2018	17:56:37
+---------------------------------------------------------------
+Please enter your first name: Mike   
+Please enter your last name: Ma
+Please enter the year of your birth: Hi
+The input is not valid! Please try again: No
+The input is not valid! Please try again: 2000
+Mike Ma becomes 18 years old in 2018.
+---------------------------------------------------------------
+Normal termination.
+
+
+test4 (invalid)
+
+Input: Holly, Wu, 199x, 1996
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Mon Sep 10 2018	23:04:23
+---------------------------------------------------------------
+Please enter your first name: Holly
+Please enter your last name: Wu
+Please enter the year of your birth: 199x
+The input is not valid! Please try again: 1996
+Holly Wu becomes 22 years old in 2018.
+---------------------------------------------------------------
+Normal termination.
+
+
+

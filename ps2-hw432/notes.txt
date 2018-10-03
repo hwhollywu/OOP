@@ -1,0 +1,60 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 2		notes.txt
+// Author: Hao Wu 
+// Date: September 19, 2018.
+// ------------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 2 for CPSC 527: Object-Oriented Programming
+class, Fall 2018. The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho04.pdf.
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp ------ Main function. 
+tools.cpp ----- C++ tools library implementation files.
+tools.hpp ----- Header file for the C++ tools library.
+readint ------- Execution file
+sample.in ----- Test file
+sample.out ---- Test file output
+data.in ------- Test file
+data.out ------ Test file output
+test1.in ------ Test file
+test1.out ----- Test file output
+test2.in ------ Test file
+test2.out ----- Test file output
+test3.in ------ Test file
+test3.out ----- Test file output
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./readint to execute.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I want to acknowledge cplusplus.com for the following C++ references.
+http://www.cplusplus.com/reference/cctype/isprint/
+http://www.cplusplus.com/reference/iomanip/setw/
+http://www.cplusplus.com/reference/iomanip/setfill/
+
+------------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+Additional cases your files test:
+Test1:  Test if the EOF is immediately preceded by lots of whitespaces.
+Test2:  Test if the EOF is immediately preceded by lots of new lines.
+Test3:  Test some special characters and EOF preceded by the characters.
+
+There are some non-ASCII characters in test3(specifically, Chinese
+and Arabic characters). Because they are non-ASCII, the character 
+'ch's are not printed out.
+
+
+
+

@@ -1,0 +1,45 @@
+// ----------------------------------------------------------
+// Output file for Problem Set 1.	
+// Author: Hao Wu
+// Date: September 7, 2018
+// ----------------------------------------------------------------------------
+
+#include "main.cpp"
+
+void test_a();
+void test_b();
+
+
+int main() {
+	test_a();
+	test_b();
+}
+
+
+// ----------------------------------------------------------------------------
+// test_a, with valid input : Hao, Wu, 1996
+
+void test_a(){
+}
+
+/*
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Fri Sep  7 2018	21:20:38
+---------------------------------------------------------------
+Please enter your first name: Hao  
+Please enter your last name: Wu
+Please enter the year of your birth: 1996
+Hao Wu becomes 22 years old in 2018.
+---------------------------------------------------------------
+Normal termination.
+*/
+
+
+// ----------------------------------------------------------------------------
+// test_b, with invalid input : Hao, Wu, Hello
+
+
+
+
