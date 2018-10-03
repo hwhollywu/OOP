@@ -9,6 +9,7 @@
 //------------------------------------------------------------
 // Print the think-a-dot machine status using text
 void ThinkaDot::print(ostream& out) const {
+	out << "Current state of machine:" << endl;
 	flops[0].print(out);
 	out << " ";
 	flops[1].print(out);
@@ -58,8 +59,8 @@ void ThinkaDot::play(char ch){
 	// finding the exit hole: either 'P' or 'Q'
 	if (curr == 6) exithole = 'P';
 	if (curr == 8) exithole = 'Q';
-	if (curr == 7 && flops[curr-1].isLeft()) exithole = 'P';
-	if (curr == 7 && !(flops[curr-1].isLeft())) exithole = 'Q';
+	if (curr == 7 && !(flops[curr-1].isLeft())) exithole = 'P';
+	if (curr == 7 && (flops[curr-1].isLeft())) exithole = 'Q';
 	// flip the bottom layer's flip-flop state before exit
 	flops[curr-1].flip();
 	// print out exit hole
@@ -70,14 +71,14 @@ int ThinkaDot::playFlipFlop(int curr){
 	FlipFlop f = flops[curr-1]; // get the flip-flop object
 	// case 0: if flip-flop 1 and state is left : connect to flipflop 6
 	// OR flip-flop 3 and state is right : connect to flipflop 8
-	if ((curr == 1 && f.isLeft()) || (curr == 3 && !(f.isLeft()))) {
+	if ((curr == 1 && !(f.isLeft())) || (curr == 3 && f.isLeft())) {
 		flops[curr-1].flip();
 		curr += 5;
 	}
 	else {
 		flops[curr-1].flip();
 		// case 1: if flip-flop state is left 
-		if (f.isLeft()) curr += 2;
+		if (!(f.isLeft())) curr += 2;
 		// case 2: if flip-flop state is right 
 		else curr += 3;
 	}
