@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++1z
+CXXFLAGS = -O1 -g -Wall -std=c++17
 OBJ = game.o main.o thinkadot.o flipflop.o tools.o
 TARGET = tad
 #-----------------------------------------------------------

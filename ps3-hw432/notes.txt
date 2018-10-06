@@ -45,6 +45,10 @@ including 'A','B','C','L','R','H','Q'.
 It handles multiple valid commands at the same time.
 For example, input 'aaa' will result as inputting to hole 'A'
 three times.
+In this think-a-dot game, 'R' stands for yellow color and 'L'
+stands for blue color for the real version of the machine.
+State 'R' means the ball travels right in this flip-flop, and 
+it's 'left-leaning'. 
 
 
 

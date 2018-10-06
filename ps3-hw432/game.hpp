@@ -12,6 +12,8 @@
 class Game{
 
 public:
+	//---------------------------------------- Constructors
+    Game() = default;   
 	//---------------------------------------- Prototypes
 	void play();	 // Starts a think-a-dot game
 };
