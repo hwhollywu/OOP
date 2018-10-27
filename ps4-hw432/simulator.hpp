@@ -7,26 +7,29 @@
 #ifndef SIMULATOR_HPP
 #define SIMULATOR_HPP
 
+#include "agent.hpp"
+
+#define INIT_AGENTS 10 
+
 class Simulator{
 
 private:
-	int numAgents;
+	int numAgents = INIT_AGENTS;
 	Agent* agents = new Agent[numAgents];
 	int numOne;
 
 public:
 	//---------------------------------------- Constructors
-	Simulator(){
-		numAgents = 0;
-		numOne = 1;
-		srand(time[0]);
-	}; // default constructor 
-	
     Simulator(int a, int o, unsigned int s){
     	numAgents = a;
     	numOne = o;
     	// set the seed for random function
     	srand (s);
+    	for (int i = 0; i < numAgents; ++i){
+    		if (i <= numOne){
+    			agents[i] = Agent(1);
+    		}else agents[i] = Agent(0);
+    	}
     };  
 	//---------------------------------------- Prototypes
 	int run( int& rounds ); 

@@ -8,7 +8,7 @@
 #include "simulator.hpp"
 
 
-void run();
+void run(char* argv[]);
 
 // ----------------------------------------------------------
 // Main function. Print a header, execute a function, 
@@ -17,35 +17,33 @@ void run();
 int main(int argc, char* argv[]) {
 	banner();
 	// only pass the right number of arguments (2 or 3)
-	if (argc == 2){
-		run(argv[1], argv[2], time[0]);
-	}else if (argc == 3){
-		run(argv[1], argv[2], argv[3]);
+	if (argc == 2 || argc == 3){
+		run(argv);
 	}else{
 		fatal("Wrong number of command line arguments!");
 	}
-	run();
 	bye();
 }
 
 // ----------------------------------------------------------
 //  This function instantiates a Simulator object 
-// and call the Game object’s play() function.
+// and simulates the consensus problem with fickle players.
 
-void run(int numAgents, int numOne, unsigned int seed) {
+void run(char* argv[]) {
+	int numAgents = atoi(argv[1]);
+	int numOne = atoi(argv[2]);
+	unsigned int seed = atoi(argv[3]);
 	// check if numAgents > numOne
 	if (numAgents < numOne){
-		fatal("numAgents < numOne! Please provide valid inputs.")
+		fatal("numAgents < numOne! Please provide valid inputs.");
 	}
 	int rounds = 0;
 	// Declare and initialize the Simulator class.
-    Simulator(numAgents,numOne,seed) s;  
+    Simulator s = Simulator(numAgents,numOne,seed);  
     // Execute the simulator function.
     int consensusValue = s.run(rounds);    
     // print output
-    cout << "numAgents: "<< numAgents << "numOne: "<< numOne 
-    << "seed: "<< seed << "numRounds: "<< rounds
-    << "consensusValue: "<< consensusValue  << endl;
+    cout << numAgents << numOne << seed << rounds << consensusValue << endl;
 }
 
 

@@ -7,7 +7,8 @@
 ------------------------------------------------------------
 0. Programming Notes
 ------------------------------------------------------------
-This is the problem set 4 for CPSC 527: Object-Oriented Programming class, Fall 2018. 
+This is the problem set 4 for CPSC 527: Object-Oriented 
+Programming class, Fall 2018. 
 The assignment details can be found at 
 http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho06.pdf
 
@@ -22,7 +23,10 @@ consensus ------- Execution file
 agent.hpp ------- Single agent used in simulation.
 simulator.cpp --- Simulator model implementation files.
 simulator.hpp --- Header file for a simulator model.
-test.out -------- Test cases (inputs & outputs) for the function
+test.out -------- Test cases of mine own
+sample.in ------- official testcase input
+sample.out ------ official testcase output
+mysample.out ---- my testcase output from sample.in
 
 ------------------------------------------------------------
 2. How to run

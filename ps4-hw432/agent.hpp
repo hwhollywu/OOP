@@ -12,16 +12,17 @@
 class Agent{
 
 private:
-	int choice;
+	int ch;
 	
 public:
 	//--------------------------------------- Constructors
-    Agent(int ch)	 					{choice = ch};   
+	Agent() = default;  
+    Agent(int ch);  
 	//------------------------------------ Inline functions	
 	// update to the fickle agent by the message m.
-	void update(int m)					{ choice = m; }
+	void update(int m)					{ ch = m; }
 	// returns the agent’s current choice.
-	int choice() const 					{ return choice; }
+	int choice() const 					{ return ch; }
 };
 
 #endif 

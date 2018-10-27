@@ -7,6 +7,17 @@
 #include "simulator.hpp"
 
 // ----------------------------------------------------------
+//  This function returns a uniformly-distributed random 
+// integer in the range [0, ... n-1].
+int uRandom( int n ) {
+  long int usefulMax = RAND_MAX - ((RAND_MAX - n) +1)%n;
+  long int r;
+  do { r = random(); }
+  while ( r > usefulMax );
+  return r % n;
+}
+
+// ----------------------------------------------------------
 //  This function runs the simulation for as many rounds as 
 //  it takes to reach consensus. Return the consensus value.
 int Simulator::
@@ -33,15 +44,4 @@ run(int& rounds){
 	// return the consensus value
 	if (numOne == numAgents) return 1;
 	else return 0;
-}
-
-// ----------------------------------------------------------
-//  This function returns a uniformly-distributed random 
-// integer in the range [0, ... n-1].
-int uRandom( int n ) {
-  long int usefulMax = RAND_MAX - ((RAND_MAX - n) +1)%n;
-  long int r;
-  do { r = random(); }
-  while ( r > usefulMax );
-  return r % n;
 }
