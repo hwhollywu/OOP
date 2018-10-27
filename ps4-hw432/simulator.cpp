@@ -48,8 +48,6 @@ run(int& rounds){
 		// increment number of rounds
 		rounds += 1;
 	}
-	// reset rounds
-	rounds = 0; 
 	// return the consensus value
 	if (numOne == numAgents) return 1;
 	else return 0;

@@ -44,7 +44,6 @@ void run(int argc, char* argv[]) {
 	}else {
 		seed = atoi(argv[3]);
 	}
-	cout << "seed: " << seed << endl;
 	int rounds = 0;
 	// Declare and initialize the Simulator class.
     Simulator s = Simulator(numAgents,numOne,seed);  

@@ -24,7 +24,6 @@ public:
     	numAgents = a;
     	numOne = o;
     	// set the seed for random function
-    	cout << "srand(s) : " << s << endl;
     	srand (s);
     	for (int i = 0; i < numAgents; ++i){
     		if (i <= numOne){
