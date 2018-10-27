@@ -33,8 +33,8 @@ mysample.out ---- my testcase output from sample.in
 ------------------------------------------------------------
 To run the program, type make and then ./consensus to execute.
 The program takes in two or three integer inputs, number of 
-agents, number of ones and seed integer for the random number 
-generator.
+agents, number of ones and (optional )seed integer for the 
+random number generator.
 
 ------------------------------------------------------------
 3. Acknowledgement
