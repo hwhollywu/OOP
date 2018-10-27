@@ -1,0 +1,49 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 4		notes.txt
+// Author: Hao Wu 
+// Date: October 26, 2018.
+// ----------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 4 for CPSC 527: Object-Oriented Programming class, Fall 2018. 
+The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho06.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp -------- Main function. 
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+consensus ------- Execution file
+agent.hpp ------- Single agent used in simulation.
+simulator.cpp --- Simulator model implementation files.
+simulator.hpp --- Header file for a simulator model.
+test.out -------- Test cases (inputs & outputs) for the function
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./consensus to execute.
+The program takes in two or three integer inputs, number of 
+agents, number of ones and seed integer for the random number 
+generator.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I want to acknowledge cplusplus.com for the following C++ references.
+http://www.cplusplus.com/reference/cstdlib/srand/
+http://www.cplusplus.com/reference/ctime/time/
+
+------------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+
+
+
+
+
