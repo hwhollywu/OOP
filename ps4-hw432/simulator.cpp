@@ -29,18 +29,27 @@ run(int& rounds){
 		int j = uRandom(numAgents);
 		int k = uRandom(numAgents - 1);
 		//  keep sender and receiver distinct
-		if (k == j){
+		if (k >= j){
 			k += 1;
 		}
-		int m = agents[j].choice();
+		int m = agents[j].choice(); // the choice in sender/message choice
+		int orig = agents[k].choice(); // the original choice in receiver
+		//cout << "j:" << j << " agent j:" << m << " k:" << k << endl;
+		//cout << " agent k BEFORE:" << orig << endl;
 		agents[k].update(m);
+		// cout << " agent k AFTER:" << agents[k].choice() << endl;
 		// keep track of the number of value ones in agents 
-		if (m == 1){
+		if (m == 1 &&  orig == 0){
 			numOne += 1;
-		}else numOne -= 1;
+		}else if (m == 0 && orig == 1){
+			numOne -= 1;
+		}
+		// cout << "numOne:" << numOne  << endl;
 		// increment number of rounds
 		rounds += 1;
 	}
+	// reset rounds
+	rounds = 0; 
 	// return the consensus value
 	if (numOne == numAgents) return 1;
 	else return 0;

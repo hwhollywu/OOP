@@ -16,6 +16,6 @@ clean:
 #-----------------------------------------------------------
 # Dependencies
 simulator.o: simulator.cpp simulator.hpp tools.hpp agent.hpp
-main.o: main.cpp tools.hpp simulator.hpp 
-agent.o: agent.hpp tools.hpp
+main.o: main.cpp tools.hpp simulator.hpp agent.hpp
+agent.o: agent.cpp agent.hpp tools.hpp
 tools.o: tools.cpp tools.hpp

@@ -46,7 +46,9 @@ http://www.cplusplus.com/reference/ctime/time/
 ------------------------------------------------------------
 4. Additional Note
 ------------------------------------------------------------
-
+The test cases included in test.out involve some corner cases
+such as when number of agents < number of ones, and some other 
+invalid inputs.
 
 
 
