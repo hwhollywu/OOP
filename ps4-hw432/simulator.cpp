@@ -6,6 +6,22 @@
 
 #include "simulator.hpp"
 
+//------------------------------------------------------------
+// Constructor
+Simulator::
+Simulator(int a, int o, unsigned int s){
+	numAgents = a;
+	numOne = o;
+	// set the seed for random function
+	srand (s);
+	agents = new Agent*[numAgents];
+	for (int i = 0; i < numAgents; ++i){
+		if (i < numOne){
+			agents[i] = new Agent(1);
+		}else agents[i] = new Agent(0);
+	}
+};  
+
 // ----------------------------------------------------------
 //  This function returns a uniformly-distributed random 
 // integer in the range [0, ... n-1].
@@ -32,19 +48,14 @@ run(int& rounds){
 		if (k >= j){
 			k += 1;
 		}
-		int m = agents[j].choice(); // the choice in sender/message choice
-		int orig = agents[k].choice(); // the original choice in receiver
-		//cout << "j:" << j << " agent j:" << m << " k:" << k << endl;
-		//cout << " agent k BEFORE:" << orig << endl;
-		agents[k].update(m);
-		// cout << " agent k AFTER:" << agents[k].choice() << endl;
-		// keep track of the number of value ones in agents 
+		int m = agents[j]->choice(); // the choice in sender/message choice
+		int orig = agents[k]->choice(); // the original choice in receiver
+		agents[k]->update(m);
 		if (m == 1 &&  orig == 0){
 			numOne += 1;
 		}else if (m == 0 && orig == 1){
 			numOne -= 1;
 		}
-		// cout << "numOne:" << numOne  << endl;
 		// increment number of rounds
 		rounds += 1;
 	}

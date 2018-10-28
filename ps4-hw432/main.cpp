@@ -15,15 +15,14 @@ void run(int argc, char* argv[]);
 // and print a termination message. 
 
 int main(int argc, char* argv[]) {
-	banner();
+	// banner();
 	// only pass the right number of arguments (2 or 3)
 	if (argc == 3 || argc == 4){
 		run(argc, argv);
 	}else{
-		cout << "argc:" << argc << endl;
 		fatal("Wrong number of command line arguments!");
 	}
-	bye();
+	// bye();
 }
 
 // ----------------------------------------------------------
@@ -51,7 +50,7 @@ void run(int argc, char* argv[]) {
     int consensusValue = s.run(rounds);    
     // print output
     cout << numAgents << " " << numOne << " " << seed 
-    << " "<< rounds << " " << consensusValue << endl;
+    << " "<< rounds << "  " << consensusValue << endl;
 }
 
 

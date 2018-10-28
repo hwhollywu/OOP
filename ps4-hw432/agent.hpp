@@ -16,7 +16,6 @@ private:
 	
 public:
 	//--------------------------------------- Constructors
-	Agent() = default;  
     Agent(int ch);  
 	//------------------------------------ Inline functions	
 	// update to the fickle agent by the message m.

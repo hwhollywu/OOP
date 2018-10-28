@@ -20,8 +20,9 @@ main.cpp -------- Main function.
 tools.cpp ------- C++ tools library implementation files.
 tools.hpp ------- Header file for the C++ tools library.
 consensus ------- Execution file
-agent.hpp ------- Single agent used in simulation.
-simulator.cpp --- Simulator model implementation files.
+agent.hpp ------- Header file for a single agent used in simulation.
+agent.cpp ------- Agent implementation file.
+simulator.cpp --- Simulator model implementation file.
 simulator.hpp --- Header file for a simulator model.
 test.out -------- Test cases of mine own
 sample.in ------- official testcase input
@@ -46,6 +47,9 @@ http://www.cplusplus.com/reference/ctime/time/
 ------------------------------------------------------------
 4. Additional Note
 ------------------------------------------------------------
+This main function does not print out banner() and bye()
+information in order to match the sample.out output.
+
 The test cases included in test.out involve some corner cases
 such as when number of agents < number of ones, and some other 
 invalid inputs.

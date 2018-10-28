@@ -15,22 +15,12 @@ class Simulator{
 
 private:
 	int numAgents = INIT_AGENTS;
-	Agent* agents = new Agent[numAgents];
+	Agent** agents;
 	int numOne;
 
 public:
 	//---------------------------------------- Constructors
-    Simulator(int a, int o, unsigned int s){
-    	numAgents = a;
-    	numOne = o;
-    	// set the seed for random function
-    	srand (s);
-    	for (int i = 0; i < numAgents; ++i){
-    		if (i <= numOne){
-    			agents[i] = Agent(1);
-    		}else agents[i] = Agent(0);
-    	}
-    };  
+    Simulator(int a, int o, unsigned int s);
 	//---------------------------------------- Prototypes
 	int run( int& rounds ); 
 
