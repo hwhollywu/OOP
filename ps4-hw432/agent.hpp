@@ -16,7 +16,14 @@ private:
 	
 public:
 	//--------------------------------------- Constructors
-    Agent(int ch);  
+    Agent() = default;
+    Agent(int c){ ch = c; }
+    // move assignement
+    Agent& operator=( Agent&& other){ 
+    	ch = other.ch;
+    	return *this;
+    }
+      
 	//------------------------------------ Inline functions	
 	// update to the fickle agent by the message m.
 	void update(int m)					{ ch = m; }

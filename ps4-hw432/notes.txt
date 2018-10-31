@@ -43,6 +43,8 @@ random number generator.
 I want to acknowledge cplusplus.com for the following C++ references.
 http://www.cplusplus.com/reference/cstdlib/srand/
 http://www.cplusplus.com/reference/ctime/time/
+https://stackoverflow.com/questions/4754763/object-array-initialization-without-default-constructor
+https://en.wikipedia.org/wiki/Move_assignment_operator
 
 ------------------------------------------------------------
 4. Additional Note

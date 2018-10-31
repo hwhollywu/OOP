@@ -3,8 +3,8 @@
 
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++1z
-OBJ = simulator.o main.o agent.o tools.o
+CXXFLAGS = -O1 -g -Wall -std=c++17
+OBJ = simulator.o main.o tools.o
 TARGET = consensus
 #-----------------------------------------------------------
 # Rules
@@ -17,5 +17,4 @@ clean:
 # Dependencies
 simulator.o: simulator.cpp simulator.hpp tools.hpp agent.hpp
 main.o: main.cpp tools.hpp simulator.hpp agent.hpp
-agent.o: agent.cpp agent.hpp tools.hpp
 tools.o: tools.cpp tools.hpp

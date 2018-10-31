@@ -12,13 +12,14 @@ Simulator::
 Simulator(int a, int o, unsigned int s){
 	numAgents = a;
 	numOne = o;
+	// use aggregation
+	agents = new Agent[numAgents]; 
 	// set the seed for random function
 	srand (s);
-	agents = new Agent*[numAgents];
 	for (int i = 0; i < numAgents; ++i){
 		if (i < numOne){
-			agents[i] = new Agent(1);
-		}else agents[i] = new Agent(0);
+			agents[i] = Agent(1);
+		}else agents[i] = Agent(0);
 	}
 };  
 
@@ -48,9 +49,9 @@ run(int& rounds){
 		if (k >= j){
 			k += 1;
 		}
-		int m = agents[j]->choice(); // the choice in sender/message choice
-		int orig = agents[k]->choice(); // the original choice in receiver
-		agents[k]->update(m);
+		int m = agents[j].choice(); // the choice in sender/message choice
+		int orig = agents[k].choice(); // the original choice in receiver
+		agents[k].update(m);
 		if (m == 1 &&  orig == 0){
 			numOne += 1;
 		}else if (m == 0 && orig == 1){

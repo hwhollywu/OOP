@@ -9,18 +9,21 @@
 
 #include "agent.hpp"
 
-#define INIT_AGENTS 10 
 
 class Simulator{
 
 private:
-	int numAgents = INIT_AGENTS;
-	Agent** agents;
+	int numAgents;
 	int numOne;
+    Agent* agents;
 
 public:
 	//---------------------------------------- Constructors
     Simulator(int a, int o, unsigned int s);
+    // destructor 
+    ~Simulator() {
+        delete[] agents;
+    }
 	//---------------------------------------- Prototypes
 	int run( int& rounds ); 
 
