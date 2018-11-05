@@ -1,0 +1,52 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 5		notes.txt
+// Author: Hao Wu 
+// Date: Nov 3, 2018.
+// ----------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 5 for CPSC 527: Object-Oriented 
+Programming class, Fall 2018. 
+The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho07.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp -------- Main function. 
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+consensus ------- Execution file
+agent.hpp ------- Header file for a single agent used in simulation.
+agent.cpp ------- Agent implementation file.
+simulator.cpp --- Simulator model implementation file.
+simulator.hpp --- Header file for a simulator model.
+test.out -------- Test cases of mine own
+sample.in ------- official testcase input
+sample.out ------ official testcase output
+mysample.out ---- my testcase output from sample.in
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./consensus2 to execute.
+The program takes in two or three integer inputs, number of 
+agents, number of ones and (optional) seed integer for the 
+random number generator.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I want to acknowledge the following C++ references.
+https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors
+
+------------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+
+
+
+
