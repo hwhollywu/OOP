@@ -14,9 +14,7 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 #-----------------------------------------------------------
 # Dependencies
-simulator.o: simulator.cpp simulator.hpp population.hpp 
-	tools.hpp fickle.hpp crowd.hpp agent.hpp
-population.o: population.cpp population.hpp tools.hpp 
-	fickle.hpp crowd.hpp agent.hpp
+simulator.o: simulator.cpp simulator.hpp population.hpp tools.hpp fickle.hpp crowd.hpp agent.hpp
+population.o: population.cpp population.hpp tools.hpp fickle.hpp crowd.hpp agent.hpp
 main.o: main.cpp tools.hpp simulator.hpp agent.hpp
 tools.o: tools.cpp tools.hpp

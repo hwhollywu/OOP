@@ -13,7 +13,7 @@
 class Simulator{
 
 private:
-	int numRounds;
+	int rounds;
     Population* ppl;
 
 public:
@@ -21,11 +21,12 @@ public:
     Simulator(Population& p);
     //------------------------------------ Inline functions 
     // return the number of rounds of simulation
-    int numRounds()               { return numRounds; }
+    int numRounds()               { return rounds; }
     // return the consensus value
-    int consensusValue()          { return ppl.consensusValue(); }
+    int consensusValue()          { return ppl->consensusValue(); }
 	//---------------------------------------- Prototypes
 	void run();  
+    ostream& print(ostream& out) const;
 
 };
 

@@ -6,6 +6,13 @@
 
 #include "population.hpp"
 
+// ----------------------------------------------------------
+//  This function returns a random double in range [0,1)
+double dRandom() {
+   return random()/(RAND_MAX+1.0); 
+ }
+
+
 //------------------------------------------------------------
 // Constructor
 Population::
@@ -15,11 +22,11 @@ Population(int n, double fickle, double one, int s){
 	probOne = one;
 	numFickle = 0;
 	numOne = 0;
-	// use aggregation
-	agents = new Agent[n]; 
+	// use dynamic aggregation
+	agents = new Agent*[numAgents]; 
 	// set the seed for random function
-	srand (s);
-	for (int i = 0; i < n; ++i){
+	srandom(s);
+	for (int i = 0; i < n; i++){
 		// choose the initial choice value 
 		// by comparing probOne with random double r1
 		double r1 = dRandom();
@@ -27,25 +34,19 @@ Population(int n, double fickle, double one, int s){
 		// by comparing probFickle with random double r2
 		double r2 = dRandom();
 		if (probOne > r1 && probFickle > r2){
-			agents[i] = Fickle(1);
+			agents[i] = new Fickle(1);
 			numFickle += 1;
 			numOne += 1;
 		}else if (probOne > r1 && probFickle <= r2){
-			agents[i] = Crowd(1);
+			agents[i] = new Crowd(1);
 			numOne += 1;
 		}else if (probOne <= r1 && probFickle > r2){
-			agents[i] = Fickle(0);
+			agents[i] = new Fickle(0);
 			numFickle += 1;
-		}else agents[i] = Crowd(0);
+		}else agents[i] = new Crowd(0);
 	}
+
 };  
-
-
-// ----------------------------------------------------------
-//  This function returns a random double in range [0,1)
-double dRandom() {
-   return random()/(RAND_MAX+1.0); 
- }
 
 
 //-----------------------------------------------------------------------
@@ -53,9 +54,9 @@ double dRandom() {
 std::ostream& Population::
 print(ostream& out) const {
 	out << "Population statistics:" << endl;
-	out << "numFickle:    "<< numFickle << endl;
-	out << " numCrowd:    "<< (numAgents - numFickle) << endl;
-	out << "  numOnes:    "<< numOne << end;
+	out << "   numFickle:    "<< numFickle << endl;
+	out << "    numCrowd:    "<< (numAgents - numFickle) << endl;
+	out << "     numOnes:    "<< numOne << endl;
 	return out;
 }
 
@@ -64,12 +65,12 @@ print(ostream& out) const {
 void Population::
 sendMessage(int sender, int receiver){
 	// the choice in sender/message choice
-	int message = agents[sender].choice();
+	int message = agents[sender]->choice();
 	// the original choice in receiver		 
-	int orig = agents[receiver].choice(); 
-	agents[receiver].update(message);
+	int orig = agents[receiver]->choice(); 
+	agents[receiver]->update(message);
 	// the updated choice in receiver
-	int updated = agents[receiver].choice(); 
+	int updated = agents[receiver]->choice(); 
 	// update numOne
 	if (updated == 1 &&  orig == 0){
 		numOne += 1;

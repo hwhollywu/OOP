@@ -19,6 +19,23 @@ public:
 	//--------------------------------------- Constructors
     Fickle() = default;
     Fickle(int c){ ch = c; }
+    // copy constructor 
+    Fickle( const Fickle& other){
+    	if (this != &other){
+    		ch = other.ch;
+    	}
+    };    
+    // copy assignment
+    Fickle& operator=( const Fickle& other){
+    	ch = other.ch;
+    	return *this;
+    };    
+    // Default move constructor
+    Fickle( Fickle&& other){
+    	if (this != &other){
+    		ch = other.ch;
+    	}
+    };    
     // move assignement
     Fickle& operator=( Fickle&& other){ 
     	ch = other.ch;

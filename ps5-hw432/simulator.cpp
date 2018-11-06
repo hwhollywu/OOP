@@ -10,8 +10,8 @@
 // Constructor
 Simulator::
 Simulator(Population& p){
-	numRounds = 0;
-	ppl = p;
+	rounds = 0;
+	ppl = &p;
 };  
 
 // ----------------------------------------------------------
@@ -30,8 +30,8 @@ int uRandom( int n ) {
 std::ostream& Simulator::
 print(ostream& out) const {
 	out << "Results of simulation:" << endl;
-	out << "      Rounds:  "<< numRounds << endl;
-	out << "   Consensus:      "<< consensusValue() << endl;
+	out << "      Rounds:  "<< rounds << endl;
+	out << "   Consensus:      "<< ppl->consensusValue() << endl;
 	return out;
 }
 
@@ -41,19 +41,17 @@ print(ostream& out) const {
 void Simulator::
 run(){
 	// keep taking random communication rounds 
-	while(!ppl.consensusReached()){
+	while(! ppl->consensusReached()){
 		// select a random pair of agents as sender and receiver 
-		int n = ppl->numAgents;
+		int n = ppl->size();
 		int sender = uRandom(n);
 		int receiver = uRandom(n - 1);
 		//  keep sender and receiver distinct
 		if (receiver >= sender){
 			receiver += 1;
 		}
-		ppl.sendMessage(sender,receiver);
+		ppl->sendMessage(sender,receiver);
 		// increment number of rounds
-		numRounds += 1;
+		rounds += 1;
 	}
-	// return the consensus value
-	return ppl.consensusValue();
 }

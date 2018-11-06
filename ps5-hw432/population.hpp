@@ -21,13 +21,16 @@ private:
 	int numAgents;
 	int numFickle;
 	int numOne;
-    Agent* agents;
+    Agent** agents;
 
 public:
 	//---------------------------------------- Constructors
 	Population(int n, double fickle, double one, int s);
     // destructor 
     ~Population() {
+    	for (int i = 0; i < numAgents ; i++){
+    		delete agents[i];
+    	}
         delete[] agents;
     }
     //------------------------------------ Inline functions	
@@ -37,6 +40,8 @@ public:
 	void sendMessage(int sender, int receiver);
 	bool consensusReached();
 	int consensusValue();
+	ostream& print(ostream& out) const;
+
 };
 
 

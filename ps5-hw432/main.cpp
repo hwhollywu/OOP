@@ -30,8 +30,8 @@ int main(int argc, char* argv[]) {
 
 void run(int argc, char* argv[]) {
 	int numAgents = atoi(argv[1]);
-	double probFickle = atoi(argv[2]);
-	double probOne = atoi(argv[3]);
+	double probFickle = atof(argv[2]);
+	double probOne = atof(argv[3]);
 	unsigned int seed;
 	cout << "Welcome to Consensus Simulator!" << endl;
 	// check input
@@ -46,9 +46,9 @@ void run(int argc, char* argv[]) {
 	}
 	// print initial parameters
     cout << "Using seed: " << seed << endl;
-    cout << "   numAgents:" << numAgents << endl;
-    cout << "  probFickle:" << probFickle << endl;
-    cout << "     probOne:" << probOne << endl;
+    cout << "   numAgents:	 " << numAgents << endl;
+    cout << "  probFickle:    " << probFickle << endl;
+    cout << "     probOne:    " << probOne << endl;
     // Declare and initilize a population class
     Population ppl = Population(numAgents,probFickle, probOne, seed);
     cout << ppl << endl;  // print population stats
