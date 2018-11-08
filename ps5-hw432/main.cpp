@@ -44,19 +44,24 @@ void run(int argc, char* argv[]) {
 	}else {
 		seed = atoi(argv[4]);
 	}
+	// set the seed for random function
+	srand(seed);
 	// print initial parameters
     cout << "Using seed: " << seed << endl;
     cout << "   numAgents:	 " << numAgents << endl;
     cout << "  probFickle:    " << probFickle << endl;
     cout << "     probOne:    " << probOne << endl;
     // Declare and initilize a population class
-    Population ppl = Population(numAgents,probFickle, probOne, seed);
-    cout << ppl << endl;  // print population stats
+    Population ppl = Population(numAgents,probFickle, probOne);
+    cout << ppl;  // print population stats
 	// Declare and initialize the Simulator class.
     Simulator s = Simulator(ppl);  
     // Execute the simulator function.
     s.run();    
-    cout << s << endl; // print results of simulation
+    // print results of simulation
+    cout << "Results of simulation:"<< endl;
+    cout << "      Rounds:  " << s.numRounds() << endl;
+    cout << "   Consensus:      " << s.consensusValue() << endl;
 }
 
 

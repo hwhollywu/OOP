@@ -25,7 +25,7 @@ private:
 
 public:
 	//---------------------------------------- Constructors
-	Population(int n, double fickle, double one, int s);
+	Population(int n, double fickle, double one);
     // destructor 
     ~Population() {
     	for (int i = 0; i < numAgents ; i++){

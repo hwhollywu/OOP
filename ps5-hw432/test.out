@@ -1,0 +1,258 @@
+// ----------------------------------------------------------
+// My test file for Problem Set 5					test.out
+// Author: Hao Wu 
+// Date: Nov 7, 2018.
+// ----------------------------------------------------------
+
+sample input:
+./consensus2 1000 0.8 0.3 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:24:16
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1000
+  probFickle:    0.8
+     probOne:    0.3
+Population statistics:
+   numFickle:    810
+    numCrowd:    190
+     numOnes:    301
+Results of simulation:
+      Rounds:  35313
+   Consensus:      0
+
+---------------------------------------------------------------
+Normal termination.
+
+0 agent:
+./consensus2 0 0.8 0.3 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:31:28
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 0
+  probFickle:    0.8
+     probOne:    0.3
+Population statistics:
+   numFickle:    0
+    numCrowd:    0
+     numOnes:    0
+Results of simulation:
+      Rounds:  0
+   Consensus:      0
+
+---------------------------------------------------------------
+
+1 agent:
+./consensus2 1 0.8 0.3 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:40:23
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1
+  probFickle:    0.8
+     probOne:    0.3
+Population statistics:
+   numFickle:    1
+    numCrowd:    0
+     numOnes:    0
+Results of simulation:
+      Rounds:  0
+   Consensus:      0
+
+---------------------------------------------------------------
+Normal termination.
+
+probFickle = 0.0
+./consensus2 1000 0.0 0.5 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:42:30
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1000
+  probFickle:    0
+     probOne:    0.5
+Population statistics:
+   numFickle:    0
+    numCrowd:    1000
+     numOnes:    492
+Results of simulation:
+      Rounds:  18790
+   Consensus:      0
+
+---------------------------------------------------------------
+
+probFickle = 0.01
+./consensus2 1000 0.01 0.5 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:46:01
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1000
+  probFickle:    0.01
+     probOne:    0.5
+Population statistics:
+   numFickle:    9
+    numCrowd:    991
+     numOnes:    492
+Results of simulation:
+      Rounds:  17753
+   Consensus:      0
+
+---------------------------------------------------------------
+
+
+probFickle = 0.5
+./consensus2 1000 0.5 0.5 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:46:29
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1000
+  probFickle:    0.5
+     probOne:    0.5
+Population statistics:
+   numFickle:    473
+    numCrowd:    527
+     numOnes:    492
+Results of simulation:
+      Rounds:  33040
+   Consensus:      0
+
+---------------------------------------------------------------
+
+probFickle = 0.99
+./consensus2 1000 0.99 0.5 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:46:45
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1541033658
+   numAgents:	 1000
+  probFickle:    0.99
+     probOne:    0.5
+Population statistics:
+   numFickle:    989
+    numCrowd:    11
+     numOnes:    492
+Results of simulation:
+      Rounds:  252868
+   Consensus:      1
+
+---------------------------------------------------------------
+Normal termination.
+
+
+probFickle = 1.0
+./consensus2 1000 1 0.5 1541033658
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:47:02
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! probFickle and probOne should be in range [0,1).
+
+
+probOne = 0.0
+./consensus2 1000 0.5 0 1
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:56:28
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1
+   numAgents:	 1000
+  probFickle:    0.5
+     probOne:    0
+Population statistics:
+   numFickle:    500
+    numCrowd:    500
+     numOnes:    0
+Results of simulation:
+      Rounds:  0
+   Consensus:      0
+
+---------------------------------------------------------------
+Normal termination.
+
+
+probOne = 0.5
+./consensus2 1000 0.5 0.5 1
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:56:05
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1
+   numAgents:	 1000
+  probFickle:    0.5
+     probOne:    0.5
+Population statistics:
+   numFickle:    500
+    numCrowd:    500
+     numOnes:    477
+Results of simulation:
+      Rounds:  32152
+   Consensus:      0
+
+---------------------------------------------------------------
+Normal termination.
+
+
+probOne = 1.0
+./consensus2 1000 0.5 0.99 1
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Wed Nov  7 2018	19:56:42
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1
+   numAgents:	 1000
+  probFickle:    0.5
+     probOne:    0.99
+Population statistics:
+   numFickle:    500
+    numCrowd:    500
+     numOnes:    994
+Results of simulation:
+      Rounds:  3167
+   Consensus:      1
+
+---------------------------------------------------------------
+Normal termination.
+

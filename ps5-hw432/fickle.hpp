@@ -18,24 +18,14 @@ private:
 public:
 	//--------------------------------------- Constructors
     Fickle() = default;
+    ~Fickle() = default;
     Fickle(int c){ ch = c; }
-    // copy constructor 
-    Fickle( const Fickle& other){
-    	if (this != &other){
-    		ch = other.ch;
-    	}
-    };    
-    // copy assignment
-    Fickle& operator=( const Fickle& other){
-    	ch = other.ch;
-    	return *this;
-    };    
+    // Default copy constructor 
+    Fickle( const Fickle& ) 		  		 =default;    
+    // Default copy assignment
+    Fickle& operator=( const Fickle& ) 	 	 =default;    
     // Default move constructor
-    Fickle( Fickle&& other){
-    	if (this != &other){
-    		ch = other.ch;
-    	}
-    };    
+    Fickle( Fickle&& )						 =default;
     // move assignement
     Fickle& operator=( Fickle&& other){ 
     	ch = other.ch;

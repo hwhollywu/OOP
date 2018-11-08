@@ -19,6 +19,7 @@ private:
 public:
 	//---------------------------------------- Constructors
     Simulator(Population& p);
+    ~Simulator() = default;
     //------------------------------------ Inline functions 
     // return the number of rounds of simulation
     int numRounds()               { return rounds; }
@@ -26,13 +27,6 @@ public:
     int consensusValue()          { return ppl->consensusValue(); }
 	//---------------------------------------- Prototypes
 	void run();  
-    ostream& print(ostream& out) const;
-
 };
-
-
-inline ostream& operator<<( ostream& out, const Simulator& s ) {
-    return s.print( out );
-}
 
 #endif 

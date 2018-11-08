@@ -2,7 +2,7 @@
 # Date: Nov 3, 2018.
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++1z
+CXXFLAGS = -O1 -g -Wall -std=c++17
 OBJ = simulator.o population.o main.o tools.o
 TARGET = consensus2
 #-----------------------------------------------------------

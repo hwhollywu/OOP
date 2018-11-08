@@ -25,23 +25,15 @@ int uRandom( int n ) {
   return r % n;
 }
 
-//-----------------------------------------------------------------------
-// Prints the result of simulation
-std::ostream& Simulator::
-print(ostream& out) const {
-	out << "Results of simulation:" << endl;
-	out << "      Rounds:  "<< rounds << endl;
-	out << "   Consensus:      "<< ppl->consensusValue() << endl;
-	return out;
-}
-
 // ----------------------------------------------------------
 //  This function runs the simulation for as many rounds as 
 //  it takes to reach consensus. Return the consensus value.
 void Simulator::
 run(){
 	// keep taking random communication rounds 
-	while(! ppl->consensusReached()){
+	while(!ppl->consensusReached()){
+		// increment number of rounds
+		rounds += 1;
 		// select a random pair of agents as sender and receiver 
 		int n = ppl->size();
 		int sender = uRandom(n);
@@ -51,7 +43,5 @@ run(){
 			receiver += 1;
 		}
 		ppl->sendMessage(sender,receiver);
-		// increment number of rounds
-		rounds += 1;
 	}
 }

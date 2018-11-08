@@ -18,13 +18,17 @@ private:
 public:
 	//--------------------------------------- Constructors
     Crowd() = default;
-    Crowd(int c){ ch = c; }
-    // copy constructor 
-    Crowd( const Crowd& ) 		   =default;    
-    // copy assignment
-    Crowd& operator=( const Crowd& ) =default;    
+    ~Crowd() = default;
+    Crowd(int c){ 
+    	ch = c; 
+    	st = c;
+    }
+    // Default copy constructor 
+    Crowd( const Crowd& ) 		  	 	  	 =default;    
+    // Default copy assignment
+    Crowd& operator=( const Crowd& )		 =default;    
     // Default move constructor
-    Crowd( Crowd&& )                 =default;    
+    Crowd( Crowd&& )                		 =default;    
     // move assignement
     Crowd& operator=( Crowd&& other){ 
     	ch = other.ch;

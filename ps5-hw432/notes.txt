@@ -19,23 +19,26 @@ This problem set consists of the following files:
 main.cpp -------- Main function. 
 tools.cpp ------- C++ tools library implementation files.
 tools.hpp ------- Header file for the C++ tools library.
-consensus ------- Execution file
-agent.hpp ------- Header file for a single agent used in simulation.
-agent.cpp ------- Agent implementation file.
+consensus2 ------ Execution file
+agent.hpp ------- Header file for pure abstract class agent 
+crowd.hpp ------- Header file for crowd, which inherits from agent
+fickle.hpp ------ Header file for fickle, which inherits from agent
+population.cpp -- Population implementation file.
+population.hpp -- Header file for population, which include both
+				  fickle and crowd agents.
 simulator.cpp --- Simulator model implementation file.
 simulator.hpp --- Header file for a simulator model.
-test.out -------- Test cases of mine own
 sample.in ------- official testcase input
 sample.out ------ official testcase output
-mysample.out ---- my testcase output from sample.in
+test.out -------- Test cases of mine own
 
 ------------------------------------------------------------
 2. How to run
 ------------------------------------------------------------
 To run the program, type make and then ./consensus2 to execute.
 The program takes in two or three integer inputs, number of 
-agents, number of ones and (optional) seed integer for the 
-random number generator.
+agents, probability of fickle types, probability of ones and 
+(optional) seed integer for the random number generator.
 
 ------------------------------------------------------------
 3. Acknowledgement
@@ -46,6 +49,31 @@ https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors
 ------------------------------------------------------------
 4. Additional Note
 ------------------------------------------------------------
+test.out file include the following test cases:
+0 agent => It takes 0 round to reach consensus.
+1 agent => It takes 0 round to reach consensus.
+
+To observe that follow-the-crowd agents do better than fickle agents, we try different probFickles as following: 
+probFickle = 0.0
+probFickle = 0.01
+probFickle = 0.5
+probFickle = 0.99
+probFickle = 1.0 => This is not acceptable and returns error
+because both probFickle and probOne shoule be in range [0,1).
+
+With a modest size population (1000), probOne = 0.5 and seed = 1541033658, 
+probFickle = 0.0  => rounds 18790
+probFickle = 0.01 => rounds 17753
+probFickle = 0.5  => rounds 33040
+probFickle = 0.99 => rounds 252868
+Because as probFickle increases, the rounds of simulation increase significantly, follow-the-crowd agents do better than fickle agents.
+We can also know that a combination of fickle and crowd agents does better than crowd agents only because probFickle = 0.01 has a smaller round number than probFickle = 0.0.
+
+probOne = 0.0 => It takes 0 round to reach consensus.
+probOne = 0.5 => It takes a large round number to reach consensus.
+probOne = 0.99 => It takes a small round number to reach consensus.
+Because the consensus state is defined by number of ones in the population, so it makes sense that when probOne is close to 0 or 1, it will take very few rounds to reach the consensus state, and it take large rounds to reach the consensus state when probOne is close to 0.5.
+
 
 
 

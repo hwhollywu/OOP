@@ -16,7 +16,7 @@ double dRandom() {
 //------------------------------------------------------------
 // Constructor
 Population::
-Population(int n, double fickle, double one, int s){
+Population(int n, double fickle, double one){
 	numAgents = n;
 	probFickle = fickle;
 	probOne = one;
@@ -24,8 +24,7 @@ Population(int n, double fickle, double one, int s){
 	numOne = 0;
 	// use dynamic aggregation
 	agents = new Agent*[numAgents]; 
-	// set the seed for random function
-	srandom(s);
+
 	for (int i = 0; i < n; i++){
 		// choose the initial choice value 
 		// by comparing probOne with random double r1
@@ -64,18 +63,15 @@ print(ostream& out) const {
 // Simulates a single communication step from sender to receiver.
 void Population::
 sendMessage(int sender, int receiver){
-	// the choice in sender/message choice
-	int message = agents[sender]->choice();
 	// the original choice in receiver		 
 	int orig = agents[receiver]->choice(); 
-	agents[receiver]->update(message);
+	agents[receiver]->update(agents[sender]->choice());
 	// the updated choice in receiver
 	int updated = agents[receiver]->choice(); 
 	// update numOne
-	if (updated == 1 &&  orig == 0){
-		numOne += 1;
-	}else if (updated == 0 && orig == 1){
-		numOne -= 1;
+	if(updated != orig){
+		if (orig == 0) numOne++;
+		else numOne--;
 	}
 }
 
