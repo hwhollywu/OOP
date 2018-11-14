@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++17
+CXXFLAGS = -O1 -g -Wall -std=c++1z
 OBJBASE = row.o tools.o
 OBJ = $(OBJBASE) main.o graph.o
 OBJNEST = $(OBJBASE) mainNest.o graphNest.o
