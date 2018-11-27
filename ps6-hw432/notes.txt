@@ -1,0 +1,54 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 6		notes.txt
+// Author: Hao Wu 
+// Date: Nov 27, 2018.
+// ----------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 6 for CPSC 527: Object-Oriented 
+Programming class, Fall 2018. 
+The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho08.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp -------- Main function. 
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+consensus2 ------ Execution file
+agent.hpp ------- Header file for pure abstract class agent 
+crowd.hpp ------- Header file for crowd, which inherits from agent
+fickle.hpp ------ Header file for fickle, which inherits from agent
+population.cpp -- Population implementation file.
+population.hpp -- Header file for population, which include both
+				  fickle and crowd agents.
+simulator.cpp --- Simulator model implementation file.
+simulator.hpp --- Header file for a simulator model.
+sample.in ------- official testcase input
+sample.out ------ official testcase output
+test.out -------- Test cases of mine own
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./consensus2 to execute.
+The program takes in two or three integer inputs, number of 
+agents, probability of fickle types, probability of ones and 
+(optional) seed integer for the random number generator.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I reuse the code for SPtr from:
+http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
+
+----------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+
+
+
