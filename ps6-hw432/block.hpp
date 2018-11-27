@@ -13,13 +13,13 @@ class Block{
 
 private:
     const SPtr p;
-	const int serialNo;
+	const int serialNo = Serial::newID(); 
     const int level;
 	
 public:
 	//--------------------------------------- Constructors
-    Block() = default;
-    ~Block() = default;
+    Block(SPtr p);
+    ~Block();
     // Delete copy constructor 
     Block(const Block& ) =delete;    
     // Delete copy assignment
@@ -29,6 +29,8 @@ public:
     // Default move assignement
     Block& operator=( Block&& other)=default;
 	//------------------------------------ Inline functions	
+    // returns the id of the currect block;
+    int serialId() const { return serialNo; }
 	// returns the level of the current block.
 	int blkLevel(){return level; }
 };

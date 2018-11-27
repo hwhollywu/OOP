@@ -56,7 +56,14 @@ public:
     bool empty() const { return count==nullptr; };
     void reset();
     int id() const { return my_id; }
+    // return the target
     T* get(){return target; }
+
+    // ???
+    T& operator->(){
+        if(!empty()) return &target;
+        else throw SPexception("Can't follow empty SPtr");
+    }
 
     // Follow operator.
     T& operator*() {

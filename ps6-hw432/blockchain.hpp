@@ -17,7 +17,7 @@ private:
 
 public:
 	//---------------------------------------- Constructors
-	Blockchain() = default;
+	Blockchain(SPtr p);
     ~Blockchain() = default;
     // Default copy constructor
     Blockchain( const Blockchain& ) =default; 
@@ -27,9 +27,12 @@ public:
     Blockchain( Blockchain&& )=default;
     // Default move assignement
     Blockchain& operator=( Blockchain&& other)=default;
+    //---------------------------------- Inline functions
+    // returns a regular pointer to the last (most recent) block
+    block* tail(){return p.get();}
+    // returns the length of current blockchain.
+    unsigned length(){return p.get().blkLevel(); } 
 	//---------------------------------- Function Prototypes
-    unsigned length(); 
-    block* tail();
 	Blockchain extend();
 	ostream& print(ostream& out) const;
 };
@@ -38,8 +41,20 @@ inline ostream& operator<<( ostream& out, const Blockchain& bc ) {
     return bc.print( out );
 }
 
-inline Blockchain operator==(Blockchain bc1, Blockchain bc2){
-	return bc1 == bc2; 
+inline bool operator==(Blockchain bc1, Blockchain bc2){
+	// check if the length and each level of blockchains are equal 
+	if (bc1.length() != bc2.length()) return false;
+	else{ 
+		block* tail1 = bc1.tail();
+		block* tail2 = bc2.tail();
+		while(tail1 != nullptr && tail2 != nullptr){
+			if(tail1.blkLevel() != tail2.blkLevel()) return false;
+			tail1 = tail1.last();
+			tail2 = tail2.last();
+		}
+		if (tail1 != nullptr || tail2 != nullptr) return false;
+	}
+	return true; 
 };
 
 

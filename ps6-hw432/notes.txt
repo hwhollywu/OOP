@@ -35,10 +35,9 @@ test.out -------- Test cases of mine own
 ------------------------------------------------------------
 2. How to run
 ------------------------------------------------------------
-To run the program, type make and then ./consensus2 to execute.
-The program takes in two or three integer inputs, number of 
-agents, probability of fickle types, probability of ones and 
-(optional) seed integer for the random number generator.
+To run the program, type make and then ./blockchain to execute.
+The program takes in single letter commands as instructed in 
+the game class.
 
 ------------------------------------------------------------
 3. Acknowledgement
@@ -48,6 +47,7 @@ http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
 
 C++ references:
 http://www.cplusplus.com/doc/tutorial/arrays/
+https://en.cppreference.com/w/cpp/language/operator_comparison
 
 ----------------------------------------------------------
 4. Additional Note

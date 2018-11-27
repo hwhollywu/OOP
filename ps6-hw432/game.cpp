@@ -13,7 +13,13 @@ void Game::
 play(){
 	char ch; // store single letter command
 	// create an array bc of 10 blockchains.
-	Blockchain bc [10] = {};
+	Blockchain bc [10];
+	for (int i=0; i<10; i++){
+		SPtr sp = SPtr();
+		Block b = block(sp); // genesis block
+		SPtr sp1 = SPtr(b);
+		bc[i] = Blockchain(sp1);
+	}
 
 	cout << "Welcome to Blockchain World!" << endl;
 	cout << "Type 'H' for user instructions." << endl; 
@@ -29,8 +35,7 @@ play(){
 				char k;
 				cin >> i;
 				cin >> k;
-				bc[i] == bc[k];
-				tad.play(ch);
+				bc[i]==bc[k];
 				continue;
 			// case 2: extend blockchains
 			case 'E':
