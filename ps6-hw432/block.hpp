@@ -7,34 +7,30 @@
 #ifndef BLOCK_HPP
 #define BLOCK_HPP
 
+#include "SPtr.hpp"
 
 class Block{
 
 private:
-	int ch;
+    const SPtr p;
+	const int serialNo;
+    const int level;
 	
 public:
 	//--------------------------------------- Constructors
-    Fickle() = default;
-    ~Fickle() = default;
-    Fickle(int c){ ch = c; }
-    // Default copy constructor 
-    Fickle( const Fickle& ) 		  		 =default;    
-    // Default copy assignment
-    Fickle& operator=( const Fickle& ) 	 	 =default;    
+    Block() = default;
+    ~Block() = default;
+    // Delete copy constructor 
+    Block(const Block& ) =delete;    
+    // Delete copy assignment
+    Block& operator=(const Block& ) =delete;    
     // Default move constructor
-    Fickle( Fickle&& )						 =default;
-    // move assignement
-    Fickle& operator=( Fickle&& other){ 
-    	ch = other.ch;
-    	return *this;
-    }
-      
+    Block(Block&& ) =default;
+    // Default move assignement
+    Block& operator=( Block&& other)=default;
 	//------------------------------------ Inline functions	
-	// update to the fickle agent by the message m.
-	virtual void update(int m)					{ ch = m; }
-	// returns the current choice.
-	virtual int choice() const 					{ return ch; }
+	// returns the level of the current block.
+	int blkLevel(){return level; }
 };
 
 #endif 

@@ -1,21 +1,21 @@
 // ----------------------------------------------------------
-// Game class for Problem Set 3.					game.cpp
+// Game class for Problem Set 6.					game.cpp
 // Author: Hao Wu 
-// Date: September 30, 2018.
+// Date: Nov 27, 2018.
 // -----------------------------------------------------------
 
 #include "game.hpp"
 
-
 // ----------------------------------------------------------
-//  This function starts the think-a-dot game. It creates a 
-//  think-a-dot object and asks the user for commands.
+//  This function is a driver program for blockchain. It creates  
+//  blockchain objects  with genesis blocks.
 void Game::
 play(){
 	char ch; // store single letter command
-	ThinkaDot tad;
+	// create an array bc of 10 blockchains.
+	Blockchain bc [10] = {};
 
-	cout << "Welcome to the Think-a-Dot Game!" << endl;
+	cout << "Welcome to Blockchain World!" << endl;
 	cout << "Type 'H' for user instructions." << endl; 
 	for (;;) {
 		cout << "Please enter your command: ";
@@ -23,28 +23,34 @@ play(){
 		ch = toupper(ch);
 
 		switch(ch){
-			// case 1: simulate the action of the machine
+			// case 1: assign blockchains
 			case 'A':
-			case 'B':
-			case 'C':
+				char i;
+				char k;
+				cin >> i;
+				cin >> k;
+				bc[i] == bc[k];
 				tad.play(ch);
 				continue;
-			// case 2: reset all points to be left or right 
-			case 'L':
-			case 'R':
-				tad.reset(ch);
+			// case 2: extend blockchains
+			case 'E':
+				char j;
+				cin >> j;
+				bc[j].extend();
 				continue;
 			// case 3: prints the state of the machine
 			case 'P':
-				tad.print(cout);
+				for (int i=0; i<bc.size(); ++i){
+					bc[i].print();
+				}
 				continue;
 			// case 4: prints a brief version of these instructions
 			case 'H':
-				cout << "- User Instruction for Think-a-Dot Game -" << endl;
+				cout << "- User Instruction for Blockchain -" << endl;
 				cout << "Valid inputs include the following single letters: " << endl;
-				cout << "A/B/C: to drop the ball in respective hole; " << endl;
-				cout << "L/R: to reset all points to the left / right; " << endl;
-				cout << "P: to print the current state of the machine;" << endl;
+				cout << "Ajk: Assign blockchain j to be equal to blockchain k; " << endl;
+				cout << "Ej: Extends blockchain j; " << endl;
+				cout << "P: Prints the blockchains in array, one per line;" << endl;
 				cout << "Q: to quit the game;" << endl;
 				continue;
 			// case 5: exits the program.

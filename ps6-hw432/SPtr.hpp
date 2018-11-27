@@ -11,9 +11,10 @@
 #include <exception>
 
 #include "Serial.hpp"
+#include "Block.hpp"
 
 using namespace std;
-using T = double;
+using T = Block;
 
 // ----------------------------------------------------------------------------
 // Smart pointer exception class
@@ -55,6 +56,7 @@ public:
     bool empty() const { return count==nullptr; };
     void reset();
     int id() const { return my_id; }
+    T* get(){return target; }
 
     // Follow operator.
     T& operator*() {

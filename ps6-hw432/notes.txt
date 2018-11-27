@@ -43,8 +43,11 @@ agents, probability of fickle types, probability of ones and
 ------------------------------------------------------------
 3. Acknowledgement
 ------------------------------------------------------------
-I reuse the code for SPtr from:
+I reuse the code for SPtr ans Serial classes from:
 http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
+
+C++ references:
+http://www.cplusplus.com/doc/tutorial/arrays/
 
 ----------------------------------------------------------
 4. Additional Note
