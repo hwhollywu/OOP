@@ -18,9 +18,12 @@ private:
 	
 public:
 	//--------------------------------------- Constructors
+    // Constructors
+    Block(int l):p(SPtr()), level(l){};
     Block(SPtr sp, int l): p(sp), level(l){
         cout <<" Default constructor called for Block " << serialId() << endl;
     };
+    // Default destructors
     ~Block()=default;
     // Delete copy constructor 
     Block(const Block& ) =delete;    
@@ -36,7 +39,14 @@ public:
     // returns the id of the currect block;
     int serialId() const { return serialNo; }
 	// returns the level of the current block.
-	int blkLevel(){return level; }
+	int blkLevel() const { return level; }
+    ostream& print(ostream& out) const;
+    void printChain();
 };
+
+
+inline ostream& operator<<( ostream& out, const Block& b ) {
+    return b.print( out );
+}
 
 #endif 

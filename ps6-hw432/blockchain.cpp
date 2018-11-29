@@ -12,30 +12,23 @@
 // the current blockchain. The new chain should be stack-allocated 
 // and returned by value.
 Blockchain Blockchain::extend(){
-	// create a new block using the current smart pointer
-	if (p.empty()){
-		cout << "p is empty!" << endl;
-	}else {
-		cout << "Pointer is " << p << endl;
-	}
-	Block b = Block(p, length()+1);
-	p = SPtr(&b);
-	cout << "Pointer is" << p << endl;
+	// copy the old SP pointed to tail
+	SPtr pt_tail = p;
+	// create a new block using the copy of smart pointer
+	Block b = Block(pt_tail, length()+1);
+	SPtr pt_new = SPtr(&b);
+	// assign this blockchain to new blockchain
+	*this = Blockchain(pt_new);
 	return *this;
 }
 
 //-----------------------------------------------------------------------
 // Prints the blocks that comprise a blockchain in order of increasing level.
-std::ostream& Blockchain::
-print(ostream& out) const {
-	SPtr t = p;
-	// TO-DO: reversely print out
-	while(t.get() != nullptr){
-		out << " [" << t.get()->blkLevel() <<","<<t.get()->serialId()<<"]";
-		t = t.get()->last();
-	}
-	return out;
+void Blockchain::print() {
+	Block* b = tail();
+	return b->printChain();
 }
+
 //-----------------------------------------------------------------------
 // Operator == checks if two blockchains are equivalent.
 bool Blockchain::operator==(Blockchain &bc2){

@@ -5,6 +5,7 @@
 // -----------------------------------------------------------
 
 #include "SPtr.hpp"
+#include "Block.hpp"
 
 // Default constructor
 SPtr::SPtr() : count(nullptr), target(nullptr) {
@@ -13,14 +14,14 @@ SPtr::SPtr() : count(nullptr), target(nullptr) {
 
 // Construct an SPtr to manage p
 SPtr::SPtr(T* p) : count(new unsigned(1)), target(p) {
-    // cout << "  SPtr(T*) constructor called for Sptr " << id() << endl;
+     //cout << "  SPtr(T*) constructor called for Sptr " << id() << endl;
 }
 
 //------------------------------------------------------------------------------
 // Copy constructor
 SPtr::SPtr(const SPtr& sp) : count(sp.count), target(sp.target) {
     ++*count;
-    // cout << "  Copy constructor from Sptr " << sp.id() << " to " << id() << endl;
+    //cout << "  Copy constructor from Sptr " << sp.id() << " to " << id() << endl;
 }
 
 //------------------------------------------------------------------------------
@@ -67,6 +68,7 @@ void SPtr::reset() {
     // No other references, so release managed storage
     // cout << "  Releasing storage managed by Sptr " << id() << endl;
     delete count;
+    // TO-DO: explicit call to Block destructor? 
     delete target;
     count = nullptr;
     target = nullptr;

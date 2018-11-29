@@ -33,7 +33,7 @@ class SPtr {
 private:
     unsigned* count = 0;    // shared object among all SPtr with same target
     T* target = nullptr;    // shared target object
-    // const int my_id = Serial::newID();    // assign unique ID to each instance
+    //const int my_id = Serial::newID();    // assign unique ID to each instance
 
 public:
     // Default constructor
@@ -56,9 +56,9 @@ public:
 
     bool empty() const { return count==nullptr; };
     void reset();
-    // int id() const { return my_id; }
+    //int id() const { return my_id; }
     // return the target
-    T* get(){return target; }
+    T* get() {return target; }
 
     // Follow operator.
     T& operator*() {

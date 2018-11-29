@@ -1,25 +1,33 @@
 // ----------------------------------------------------------
-// Game class for Problem Set 6.					game.cpp
+// Driver class for Problem Set 6.					driver.cpp
 // Author: Hao Wu 
 // Date: Nov 27, 2018.
 // -----------------------------------------------------------
 
-#include "game.hpp"
+#include "driver.hpp"
+
+
+
+// ----------------------------------------------------------
+// Constructor
+Driver(){
+	// create the genesis block
+ 	Block genesis(0); 
+ 	// create a sp pointing to the genesis block
+ 	SPtr sp(&genesis);
+ 	// create the blockchain based on the sp
+ 	Blockchain bc0(sp);
+ 	for (int i = 0; i < 10; i++) {
+ 	 	bc[i] = bc0;
+ 	}
+
+}
 
 // ----------------------------------------------------------
 //  This function is a driver program for blockchain. It creates  
 //  blockchain objects  with genesis blocks.
-void Game::
-play(){
+void Driver::start(){
 	char ch; // store single letter command
-	// create an array bc of 10 blockchains.
- 	Block genesis = Block(nullptr, 0); // genesis block
- 	SPtr sp = SPtr(&genesis);
-	Blockchain bc [10];
- 	for (int i = 0; i < 10; i++) {
- 	 	bc[i] = Blockchain(sp);
- 	}
-
 	cout << "Welcome to Blockchain World!" << endl;
 	cout << "Type 'H' for user instructions." << endl; 
 	for (;;) {
@@ -34,22 +42,32 @@ play(){
 				char k;
 				cin >> j;
 				cin >> k;
-				cout << "Assigning Block " << j << " to " <<"Block "<<k<<endl;
-				bc[j-'0'] = bc[k-'0'];
-				continue;
+				if ('0' <= j && j <= '9' && '0' <= k && k <= '9' ){
+					cout << "Assigning Block " << j << " to " <<"Block "<<k<<endl;
+					bc[j-'0'] = bc[k-'0'];
+					continue;
+				}else{
+					cout << "Block index should be within range [0-9]!" <<endl;
+					break;
+				}
 			// case 2: extend blockchains
 			case 'E':
 				char i;
 				cin >> i;
-				cout << "Extending Block " << i <<endl;
-				bc[i-'0'].extend();
-				continue;
+				if ('0' <= i && i <= '9'){
+					cout << "Extending Block " << i <<endl;
+					bc[i-'0'].extend();
+					continue;
+				}else{
+					cout << "Block index should be within range [0-9]!" <<endl;
+					break;
+				}
 			// case 3: prints the blockchains in array bc[]
 			case 'P':
 				cout << "Printing out blockchains .." <<endl;
 				for (int i=0; i<10; ++i){
 					cout << "Blockchain " << i << ": ";
-					bc[i].print(cout);
+					bc[i].print();
 					cout << endl;
 				}
 				continue;
@@ -61,6 +79,7 @@ play(){
 				cout << "Ej: Extends blockchain j; " << endl;
 				cout << "P: Prints the blockchains in array, one per line;" << endl;
 				cout << "Q: to quit the game;" << endl;
+				cout << "------------------------------------" << endl;
 				continue;
 			// case 5: exits the program.
 			case 'Q': 

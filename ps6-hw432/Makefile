@@ -4,7 +4,7 @@
 #-----------------------------------------------------------
 # Macro definitions
 CXXFLAGS = -O1 -g -Wall -std=c++1z
-OBJ = main.o game.o blockchain.o SPtr.o Serial.o tools.o
+OBJ = main.o driver.o blockchain.o block.o SPtr.o Serial.o tools.o
 TARGET = blockchain
 #-----------------------------------------------------------
 # Rules
@@ -15,9 +15,10 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 #-----------------------------------------------------------
 # Dependencies
-main.o: main.cpp SPtr.hpp Serial.hpp tools.hpp game.hpp block.hpp blockchain.hpp
-game.o: game.cpp game.hpp tools.hpp blockchain.hpp
+main.o: main.cpp SPtr.hpp Serial.hpp tools.hpp driver.hpp block.hpp blockchain.hpp
+driver.o: driver.cpp driver.hpp tools.hpp blockchain.hpp
 blockchain.o: blockchain.cpp blockchain.hpp block.hpp SPtr.hpp
+block.o: block.cpp block.hpp SPtr.hpp
 main.o: main.cpp SPtr.hpp Serial.hpp
 Serial.o: Serial.cpp Serial.hpp
 SPtr.o: SPtr.cpp SPtr.hpp Serial.hpp block.hpp
