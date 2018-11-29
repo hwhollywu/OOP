@@ -13,13 +13,12 @@ void Game::
 play(){
 	char ch; // store single letter command
 	// create an array bc of 10 blockchains.
+ 	Block genesis = Block(nullptr, 0); // genesis block
+ 	SPtr sp = SPtr(&genesis);
 	Blockchain bc [10];
-	for (int i=0; i<10; i++){
-		SPtr sp = SPtr();
-		Block b = block(sp); // genesis block
-		SPtr sp1 = SPtr(b);
-		bc[i] = Blockchain(sp1);
-	}
+ 	for (int i = 0; i < 10; i++) {
+ 	 	bc[i] = Blockchain(sp);
+ 	}
 
 	cout << "Welcome to Blockchain World!" << endl;
 	cout << "Type 'H' for user instructions." << endl; 
@@ -31,22 +30,27 @@ play(){
 		switch(ch){
 			// case 1: assign blockchains
 			case 'A':
-				char i;
+				char j;
 				char k;
-				cin >> i;
+				cin >> j;
 				cin >> k;
-				bc[i]==bc[k];
+				cout << "Assigning Block " << j << " to " <<"Block "<<k<<endl;
+				bc[j-'0'] = bc[k-'0'];
 				continue;
 			// case 2: extend blockchains
 			case 'E':
-				char j;
-				cin >> j;
-				bc[j].extend();
+				char i;
+				cin >> i;
+				cout << "Extending Block " << i <<endl;
+				bc[i-'0'].extend();
 				continue;
-			// case 3: prints the state of the machine
+			// case 3: prints the blockchains in array bc[]
 			case 'P':
-				for (int i=0; i<bc.size(); ++i){
-					bc[i].print();
+				cout << "Printing out blockchains .." <<endl;
+				for (int i=0; i<10; ++i){
+					cout << "Blockchain " << i << ": ";
+					bc[i].print(cout);
+					cout << endl;
 				}
 				continue;
 			// case 4: prints a brief version of these instructions

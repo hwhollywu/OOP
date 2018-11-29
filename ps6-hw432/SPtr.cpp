@@ -8,19 +8,19 @@
 
 // Default constructor
 SPtr::SPtr() : count(nullptr), target(nullptr) {
-    cout << "  Default constructor called for Sptr " << id() << endl;
+    // cout << "  Default constructor called for Sptr " << id() << endl;
 }
 
 // Construct an SPtr to manage p
 SPtr::SPtr(T* p) : count(new unsigned(1)), target(p) {
-    cout << "  SPtr(T*) constructor called for Sptr " << id() << endl;
+    // cout << "  SPtr(T*) constructor called for Sptr " << id() << endl;
 }
 
 //------------------------------------------------------------------------------
 // Copy constructor
 SPtr::SPtr(const SPtr& sp) : count(sp.count), target(sp.target) {
     ++*count;
-    cout << "  Copy constructor from Sptr " << sp.id() << " to " << id() << endl;
+    // cout << "  Copy constructor from Sptr " << sp.id() << " to " << id() << endl;
 }
 
 //------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ SPtr::operator=(const SPtr& sp) {
     count = sp.count;
     target = sp.target; // copy pointer
     ++*count;
-    cout << "  Copy assignment from Sptr " << sp.id() << " to " << id() << endl;
+    // cout << "  Copy assignment from Sptr " << sp.id() << " to " << id() << endl;
     return *this;
 }
 
@@ -40,7 +40,7 @@ SPtr::operator=(const SPtr& sp) {
 SPtr::SPtr(SPtr&& sp) : count(sp.count), target(sp.target) {
     sp.count = nullptr;
     sp.target = nullptr;
-    cout << "  Move constructor from Sptr " << sp.id() << " to " << id() << endl;
+    // cout << "  Move constructor from Sptr " << sp.id() << " to " << id() << endl;
 }
 
 //------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ operator=(SPtr&& sp) {
     target = sp.target;
     sp.count = nullptr;
     sp.target = nullptr;
-    cout << "  Move assignment from Sptr " << sp.id() << " to " << id() << endl;
+    // cout << "  Move assignment from Sptr " << sp.id() << " to " << id() << endl;
     return *this;
 }
 
@@ -65,7 +65,7 @@ void SPtr::reset() {
     // Unmanage target pointer
     if (--*count > 0) return;
     // No other references, so release managed storage
-    cout << "  Releasing storage managed by Sptr " << id() << endl;
+    // cout << "  Releasing storage managed by Sptr " << id() << endl;
     delete count;
     delete target;
     count = nullptr;

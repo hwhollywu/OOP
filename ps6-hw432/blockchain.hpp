@@ -5,10 +5,12 @@
 // -----------------------------------------------------------
 
 
-#ifndef BLOCKCHIAN_HPP
+#ifndef BLOCKCHAIN_HPP
 #define BLOCKCHAIN_HPP
 
 #include "SPtr.hpp"
+#include "block.hpp"
+
 
 class Blockchain{
 
@@ -17,8 +19,9 @@ private:
 
 public:
 	//---------------------------------------- Constructors
-	Blockchain(SPtr p);
-    ~Blockchain() = default;
+	Blockchain(){p = nullptr;}
+	Blockchain(SPtr sp): p(sp){};
+    ~Blockchain()=default;
     // Default copy constructor
     Blockchain( const Blockchain& ) =default; 
     // Default copy assignment   
@@ -29,33 +32,18 @@ public:
     Blockchain& operator=( Blockchain&& other)=default;
     //---------------------------------- Inline functions
     // returns a regular pointer to the last (most recent) block
-    block* tail(){return p.get();}
+    Block* tail(){return p.get();}
     // returns the length of current blockchain.
-    unsigned length(){return p.get().blkLevel(); } 
+    unsigned length(){return p.get()->blkLevel(); } 
 	//---------------------------------- Function Prototypes
 	Blockchain extend();
 	ostream& print(ostream& out) const;
+	bool operator==(Blockchain &bc2);
 };
 
 inline ostream& operator<<( ostream& out, const Blockchain& bc ) {
     return bc.print( out );
 }
-
-inline bool operator==(Blockchain bc1, Blockchain bc2){
-	// check if the length and each level of blockchains are equal 
-	if (bc1.length() != bc2.length()) return false;
-	else{ 
-		block* tail1 = bc1.tail();
-		block* tail2 = bc2.tail();
-		while(tail1 != nullptr && tail2 != nullptr){
-			if(tail1.blkLevel() != tail2.blkLevel()) return false;
-			tail1 = tail1.last();
-			tail2 = tail2.last();
-		}
-		if (tail1 != nullptr || tail2 != nullptr) return false;
-	}
-	return true; 
-};
 
 
 #endif

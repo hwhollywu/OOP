@@ -6,18 +6,6 @@
 
 #include "blockchain.hpp"
 
-//------------------------------------------------------------------------------
-// constructor
-Blockchain::Blockchain(SPtr sp) : p(sp) {
-    cout << "  SPtr constructor called for Blockchain " << endl;
-}
-
-//------------------------------------------------------------------------------
-// Destructor
-Blockchain::~Blockchain() {
-    cout << "  Destructor called for Blockchain "<< endl;
-    p.reset();
-}
 
 // ----------------------------------------------------------
 // This function returns a new blockchain created by extending 
@@ -25,9 +13,15 @@ Blockchain::~Blockchain() {
 // and returned by value.
 Blockchain Blockchain::extend(){
 	// create a new block using the current smart pointer
-	Block b = Block(p);
-	SPtr sp = SPtr(b);
-	p = sp;
+	if (p.empty()){
+		cout << "p is empty!" << endl;
+	}else {
+		cout << "Pointer is " << p << endl;
+	}
+	Block b = Block(p, length()+1);
+	p = SPtr(&b);
+	cout << "Pointer is" << p << endl;
+	return *this;
 }
 
 //-----------------------------------------------------------------------
@@ -37,23 +31,23 @@ print(ostream& out) const {
 	SPtr t = p;
 	// TO-DO: reversely print out
 	while(t.get() != nullptr){
-		out << " [" << t.get().blkLevel() <<","<<t.get().serialId()<<"]";
-		t = t.get().last();
+		out << " [" << t.get()->blkLevel() <<","<<t.get()->serialId()<<"]";
+		t = t.get()->last();
 	}
 	return out;
 }
 //-----------------------------------------------------------------------
 // Operator == checks if two blockchains are equivalent.
-bool Blockchain::operator==(Blockchain bc1, Blockchain bc2){
+bool Blockchain::operator==(Blockchain &bc2){
 	// check if the length and each level of blockchains are equal 
-	if (bc1.length() != bc2.length()) return false;
+	if (length() != bc2.length()) return false;
 	else{ 
-		block* tail1 = bc1.tail();
-		block* tail2 = bc2.tail();
+		Block* tail1 = tail();
+		Block* tail2 = bc2.tail();
 		while(tail1 != nullptr && tail2 != nullptr){
-			if(tail1.blkLevel() != tail2.blkLevel()) return false;
-			tail1 = tail1.last();
-			tail2 = tail2.last();
+			if(tail1->blkLevel() != tail2->blkLevel()) return false;
+			tail1 = tail1->last();
+			tail2 = tail2->last();
 		}
 		if (tail1 != nullptr || tail2 != nullptr) return false;
 	}

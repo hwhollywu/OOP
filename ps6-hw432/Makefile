@@ -1,11 +1,11 @@
 # Author: Hao Wu
-# Date: September 30, 2018
+# Date: Nov 27, 2018
 
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++17
-OBJ = game.o main.o thinkadot.o flipflop.o tools.o
-TARGET = tad
+CXXFLAGS = -O1 -g -Wall -std=c++1z
+OBJ = main.o game.o blockchain.o SPtr.o Serial.o tools.o
+TARGET = blockchain
 #-----------------------------------------------------------
 # Rules
 all: $(TARGET)
@@ -15,8 +15,10 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 #-----------------------------------------------------------
 # Dependencies
-game.o: game.cpp game.hpp tools.hpp flipflop.hpp thinkadot.hpp
-main.o: main.cpp tools.hpp game.hpp flipflop.hpp thinkadot.hpp
-thinkadot.o: thinkadot.cpp thinkadot.hpp tools.hpp flipflop.hpp
-token.o: flipflop.cpp flipflop.hpp tools.hpp
+main.o: main.cpp SPtr.hpp Serial.hpp tools.hpp game.hpp block.hpp blockchain.hpp
+game.o: game.cpp game.hpp tools.hpp blockchain.hpp
+blockchain.o: blockchain.cpp blockchain.hpp block.hpp SPtr.hpp
+main.o: main.cpp SPtr.hpp Serial.hpp
+Serial.o: Serial.cpp Serial.hpp
+SPtr.o: SPtr.cpp SPtr.hpp Serial.hpp block.hpp
 tools.o: tools.cpp tools.hpp
