@@ -6,7 +6,6 @@
 
 #include "blockchain.hpp"
 
-
 // ----------------------------------------------------------
 // This function returns a new blockchain created by extending 
 // the current blockchain. The new chain should be stack-allocated 
@@ -15,18 +14,17 @@ Blockchain Blockchain::extend(){
 	// copy the old SP pointed to tail
 	SPtr pt_tail = p;
 	// create a new block using the copy of smart pointer
-	Block b = Block(pt_tail, length()+1);
-	SPtr pt_new = SPtr(&b);
+	Block b(pt_tail, length()+1);
+	SPtr pt_new(&b);
 	// assign this blockchain to new blockchain
-	*this = Blockchain(pt_new);
-	return *this;
+	return Blockchain(pt_new);
 }
 
 //-----------------------------------------------------------------------
 // Prints the blocks that comprise a blockchain in order of increasing level.
 void Blockchain::print() {
-	Block* b = tail();
-	return b->printChain();
+	Block* t = tail();
+	return t->printChain();
 }
 
 //-----------------------------------------------------------------------

@@ -13,8 +13,7 @@
 class Driver{
 
 private:
-	int size = 10;
-	Blockchain bc [size];
+	Blockchain bc[10];
 
 public:
 	//---------------------------------------- Constructor

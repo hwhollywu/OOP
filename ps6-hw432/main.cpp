@@ -5,7 +5,7 @@
 // -----------------------------------------------------------
 
 #include "tools.hpp"
-#include "game.hpp"
+#include "driver.hpp"
 
 
 void run();
@@ -21,12 +21,12 @@ int main(int argc, char* argv[]) {
 }
 
 // ----------------------------------------------------------
-//  This function instantiates a Game object 
-// and call the Game object’s play() function.
+//  This function instantiates a Driver object 
+// and call the Driver object’s start() function.
 
 void run() {
-    Game g;      // Declare and initialize the Game class.
-    g.play();    // Execute the game function.
+    Driver d;      // Declare and initialize the driver class.
+    d.start();    // Execute the start function.
 }
 
 

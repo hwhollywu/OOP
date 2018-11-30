@@ -19,8 +19,8 @@ private:
 public:
 	//--------------------------------------- Constructors
     // Constructors
-    Block(int l):p(SPtr()), level(l){};
-    Block(SPtr sp, int l): p(sp), level(l){
+    Block() : p(SPtr()), level(0){};
+    Block(SPtr sp, int l) : p(sp), level(l){
         cout <<" Default constructor called for Block " << serialId() << endl;
     };
     // Default destructors

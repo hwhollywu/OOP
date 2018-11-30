@@ -6,13 +6,11 @@
 
 #include "driver.hpp"
 
-
-
 // ----------------------------------------------------------
 // Constructor
-Driver(){
+Driver::Driver(){
 	// create the genesis block
- 	Block genesis(0); 
+ 	Block genesis; 
  	// create a sp pointing to the genesis block
  	SPtr sp(&genesis);
  	// create the blockchain based on the sp
@@ -21,7 +19,7 @@ Driver(){
  	 	bc[i] = bc0;
  	}
 
-}
+};
 
 // ----------------------------------------------------------
 //  This function is a driver program for blockchain. It creates  

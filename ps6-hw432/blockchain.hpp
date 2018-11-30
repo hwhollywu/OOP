@@ -20,8 +20,8 @@ private:
 public:
 	//---------------------------------------- Constructors
     // Constructors
-    Blockchain():p(SPtr()){};
-	Blockchain(SPtr sp): p(sp){};
+    Blockchain() = default;
+	Blockchain(SPtr sp) : p(sp){};
     ~Blockchain() =default;
     // Default copy constructor
     Blockchain( const Blockchain& ) =default; 
