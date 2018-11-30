@@ -8,23 +8,21 @@
 
 //-----------------------------------------------------------------------
 // Prints the current block information
-std::ostream& Block::
+ostream& Block::
 print(ostream& out) const {
-	out << " [" << blkLevel() <<","<<serialId()<<"]";
+	out << " [" << blkLevel() <<","<<serialId()<<"] ";
 	return out;
 }
 
 //-----------------------------------------------------------------------
 // Recursively prints the block chain information from the head
-void Block::printChain() {
+ostream& Block::
+printChain(ostream& out) const {
+	Block* prev = p.getTarget();
 	// base case
-	if (p.get() == nullptr){
-		print(cout);
-		return;
+	if (level == 0){
+		return print(out);
 	}
-	// recursive case		
-	Block* b = p.get();
-	cout << " recursive b! " << endl;
-	b->print(cout);
-	// b->printChain();
+	// recursive case
+	return prev->printChain(out);
 }

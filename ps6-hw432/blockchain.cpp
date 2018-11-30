@@ -6,6 +6,18 @@
 
 #include "blockchain.hpp"
 
+//------------------------------------------------------------------------------
+// Copy constructor
+Blockchain::Blockchain( const Blockchain& bc ): p(bc.p){}; 
+
+//------------------------------------------------------------------------------
+// Copy assignment
+Blockchain&
+Blockchain::operator=(const Blockchain& bc) {
+    p = bc.p; // copy smart pointer
+    return *this;
+}
+
 // ----------------------------------------------------------
 // This function returns a new blockchain created by extending 
 // the current blockchain. The new chain should be stack-allocated 
@@ -13,22 +25,27 @@
 Blockchain Blockchain::extend(){
 	// copy the old SP pointed to tail
 	SPtr pt_tail = p;
+	cout << "extend pt_tail" << *(pt_tail.getTarget()) << endl;
 	// create a new block using the copy of smart pointer
 	Block b(pt_tail, length()+1);
 	SPtr pt_new(&b);
+	cout << "extend pt_new" << *(pt_new.getTarget()) << endl;
 	// assign this blockchain to new blockchain
-	return Blockchain(pt_new);
+	*this = Blockchain(pt_new);
+	return *this;
 }
 
 //-----------------------------------------------------------------------
 // Prints the blocks that comprise a blockchain in order of increasing level.
-void Blockchain::print() {
-	Block* t = tail();
-	return t->printChain();
+ostream& Blockchain::
+print(ostream& out) const {
+	Block* prev = p.getTarget();
+	return prev->printChain(out);
 }
 
 //-----------------------------------------------------------------------
 // Operator == checks if two blockchains are equivalent.
+/*
 bool Blockchain::operator==(Blockchain &bc2){
 	// check if the length and each level of blockchains are equal 
 	if (length() != bc2.length()) return false;
@@ -44,4 +61,5 @@ bool Blockchain::operator==(Blockchain &bc2){
 	}
 	return true; 
 };
+*/
 

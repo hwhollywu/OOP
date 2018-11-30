@@ -5,7 +5,7 @@
 // -----------------------------------------------------------
 
 #include "SPtr.hpp"
-#include "Block.hpp"
+#include "block.hpp"
 
 // Default constructor
 SPtr::SPtr() : count(nullptr), target(nullptr) {
@@ -68,7 +68,6 @@ void SPtr::reset() {
     // No other references, so release managed storage
     // cout << "  Releasing storage managed by Sptr " << id() << endl;
     delete count;
-    // TO-DO: explicit call to Block destructor? 
     delete target;
     count = nullptr;
     target = nullptr;

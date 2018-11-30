@@ -12,7 +12,7 @@
 class Block{
 
 private:
-    SPtr p;
+    const SPtr p;
 	const int serialNo = Serial::newID(); 
     const int level;
 	
@@ -20,9 +20,7 @@ public:
 	//--------------------------------------- Constructors
     // Constructors
     Block() : p(SPtr()), level(0){};
-    Block(SPtr sp, int l) : p(sp), level(l){
-        cout <<" Default constructor called for Block " << serialId() << endl;
-    };
+    Block(SPtr sp, int l) : p(sp), level(l){};
     // Default destructors
     ~Block()=default;
     // Delete copy constructor 
@@ -35,13 +33,13 @@ public:
     Block& operator=( Block&& other)=default;
 	//------------------------------------ Inline functions	
     // return a regular pointer to the last block
-    Block* last(){return p.get();}
+    // Block* last(){return p.get();}
     // returns the id of the currect block;
     int serialId() const { return serialNo; }
 	// returns the level of the current block.
 	int blkLevel() const { return level; }
     ostream& print(ostream& out) const;
-    void printChain();
+    ostream& printChain(ostream& out) const;
 };
 
 

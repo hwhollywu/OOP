@@ -58,7 +58,7 @@ public:
     void reset();
     //int id() const { return my_id; }
     // return the target
-    T* get() {return target; }
+    T* getTarget() const {return target; }
 
     // Follow operator.
     T& operator*() {

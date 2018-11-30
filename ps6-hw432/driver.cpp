@@ -18,12 +18,10 @@ Driver::Driver(){
  	for (int i = 0; i < 10; i++) {
  	 	bc[i] = bc0;
  	}
-
-};
+}
 
 // ----------------------------------------------------------
-//  This function is a driver program for blockchain. It creates  
-//  blockchain objects  with genesis blocks.
+//  This function is a driver program for blockchain.
 void Driver::start(){
 	char ch; // store single letter command
 	cout << "Welcome to Blockchain World!" << endl;
@@ -63,9 +61,9 @@ void Driver::start(){
 			// case 3: prints the blockchains in array bc[]
 			case 'P':
 				cout << "Printing out blockchains .." <<endl;
-				for (int i=0; i<10; ++i){
+				for (int i=0; i<10; i++){
 					cout << "Blockchain " << i << ": ";
-					bc[i].print();
+					bc[i].print(cout);
 					cout << endl;
 				}
 				continue;
@@ -90,7 +88,4 @@ void Driver::start(){
 		}
 
 	}
-
-
-
 }

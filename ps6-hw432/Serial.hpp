@@ -14,7 +14,7 @@
 class Serial {
 private:
    static Serial* Sobj; // pointer to singleton Serial object
-   int nextUID=0;       // data member for next UID to be assigned
+   int nextUID=1;       // data member for next UID to be assigned
    static Serial* uidGen() {  // instaniates Serial on first call
       if (Sobj == nullptr) Sobj = new Serial;
       return Sobj;

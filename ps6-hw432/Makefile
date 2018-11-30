@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------
 # Macro definitions
-CXXFLAGS = -O1 -g -Wall -std=c++1z
+CXXFLAGS = -O1 -g -Wall -std=c++17
 OBJ = main.o driver.o blockchain.o block.o SPtr.o Serial.o tools.o
 TARGET = blockchain
 #-----------------------------------------------------------
