@@ -39,7 +39,7 @@ void Driver::start(){
 				cin >> j;
 				cin >> k;
 				if ('0' <= j && j <= '9' && '0' <= k && k <= '9' ){
-					cout << "Assigning Block " << j << " to " <<"Block "<<k<<endl;
+					cout << "Assigning Block " << j << " to be equal to " <<"Block "<<k<<endl;
 					bc[j-'0'] = bc[k-'0'];
 					continue;
 				}else{
@@ -52,7 +52,8 @@ void Driver::start(){
 				cin >> i;
 				if ('0' <= i && i <= '9'){
 					cout << "Extending Block " << i <<endl;
-					bc[i-'0'].extend();
+					Blockchain bc_new = bc[i-'0'].extend();
+					bc[i-'0'] = bc_new;
 					continue;
 				}else{
 					cout << "Block index should be within range [0-9]!" <<endl;
@@ -64,7 +65,7 @@ void Driver::start(){
 				for (int i=0; i<10; i++){
 					cout << "Blockchain " << i << ": ";
 					bc[i].print(cout);
-					cout << endl;
+					//cout << endl;
 				}
 				continue;
 			// case 4: prints a brief version of these instructions

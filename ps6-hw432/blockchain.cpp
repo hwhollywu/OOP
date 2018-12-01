@@ -8,15 +8,17 @@
 
 //------------------------------------------------------------------------------
 // Copy constructor
-Blockchain::Blockchain( const Blockchain& bc ): p(bc.p){}; 
+/*
+Blockchain::Blockchain( const Blockchain& bc ): p(bc.p){}; */
 
 //------------------------------------------------------------------------------
 // Copy assignment
+/*
 Blockchain&
 Blockchain::operator=(const Blockchain& bc) {
     p = bc.p; // copy smart pointer
     return *this;
-}
+}*/
 
 // ----------------------------------------------------------
 // This function returns a new blockchain created by extending 
@@ -25,14 +27,17 @@ Blockchain::operator=(const Blockchain& bc) {
 Blockchain Blockchain::extend(){
 	// copy the old SP pointed to tail
 	SPtr pt_tail = p;
-	cout << "extend pt_tail" << *(pt_tail.getTarget()) << endl;
+	// cout << "extend pt_tail" << *(pt_tail.getTarget()) << endl;
 	// create a new block using the copy of smart pointer
-	Block b(pt_tail, length()+1);
-	SPtr pt_new(&b);
-	cout << "extend pt_new" << *(pt_new.getTarget()) << endl;
+	// malloc space for the new block
+	Block* b = new Block(pt_tail, length()+1);
+	SPtr pt_new(b);
+	// cout << "extend pt_new" << *(pt_new.getTarget()) << endl;
 	// assign this blockchain to new blockchain
-	*this = Blockchain(pt_new);
-	return *this;
+	// return (Blockchain(pt_new));
+	Blockchain bc_new(pt_new);
+	// cout << "extend bc_new:" << bc_new << endl;
+	return bc_new;
 }
 
 //-----------------------------------------------------------------------
@@ -40,7 +45,9 @@ Blockchain Blockchain::extend(){
 ostream& Blockchain::
 print(ostream& out) const {
 	Block* prev = p.getTarget();
-	return prev->printChain(out);
+	prev->printChain(out);
+	out << endl;
+	return out;
 }
 
 //-----------------------------------------------------------------------

@@ -39,7 +39,7 @@ public:
 	// returns the level of the current block.
 	int blkLevel() const { return level; }
     ostream& print(ostream& out) const;
-    ostream& printChain(ostream& out) const;
+    void printChain(ostream& out) const;
 };
 
 

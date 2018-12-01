@@ -23,9 +23,9 @@ public:
 	Blockchain(SPtr sp) : p(sp){};
     ~Blockchain() =default;
     // copy constructor
-    Blockchain( const Blockchain& bc ); 
+    Blockchain( const Blockchain& bc )=default; 
     // copy assignment   
-    Blockchain& operator=( const Blockchain& bc );    
+    Blockchain& operator=( const Blockchain& bc )=default;    
     // Default move constructor
     Blockchain( Blockchain&& )=default;
     // Default move assignement

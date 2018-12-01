@@ -20,7 +20,9 @@ SPtr::SPtr(T* p) : count(new unsigned(1)), target(p) {
 //------------------------------------------------------------------------------
 // Copy constructor
 SPtr::SPtr(const SPtr& sp) : count(sp.count), target(sp.target) {
-    ++*count;
+    if (count != nullptr){
+        ++*count;
+    }
     //cout << "  Copy constructor from Sptr " << sp.id() << " to " << id() << endl;
 }
 

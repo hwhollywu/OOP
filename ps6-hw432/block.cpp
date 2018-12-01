@@ -10,19 +10,22 @@
 // Prints the current block information
 ostream& Block::
 print(ostream& out) const {
-	out << " [" << blkLevel() <<","<<serialId()<<"] ";
+	out << " [" << blkLevel() <<","<<serialId()<<"]";
 	return out;
 }
 
 //-----------------------------------------------------------------------
 // Recursively prints the block chain information from the head
-ostream& Block::
+void Block::
 printChain(ostream& out) const {
-	Block* prev = p.getTarget();
 	// base case
 	if (level == 0){
-		return print(out);
+		print(out);
+		return;
 	}
 	// recursive case
-	return prev->printChain(out);
+	Block* prev = p.getTarget();
+	//out << "recursive case"<< " *prev: " << *prev << "level: " << level <<endl;
+	prev->printChain(out);
+	print(out);
 }
