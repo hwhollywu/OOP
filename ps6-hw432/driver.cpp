@@ -52,6 +52,7 @@ void Driver::start(){
 				cin >> i;
 				if ('0' <= i && i <= '9'){
 					cout << "Extending Block " << i <<endl;
+					// assign old blockchain to new blockchain
 					Blockchain bc_new = bc[i-'0'].extend();
 					bc[i-'0'] = bc_new;
 					continue;

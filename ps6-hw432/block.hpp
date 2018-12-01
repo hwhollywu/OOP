@@ -19,8 +19,8 @@ private:
 public:
 	//--------------------------------------- Constructors
     // Constructors
-    Block() : p(SPtr()), level(0){};
-    Block(SPtr sp, int l) : p(sp), level(l){};
+    Block() : p(SPtr()), level(0){}
+    Block(SPtr sp, int l) : p(sp), level(l){}
     // Default destructors
     ~Block()=default;
     // Delete copy constructor 
@@ -39,7 +39,7 @@ public:
 	// returns the level of the current block.
 	int blkLevel() const { return level; }
     ostream& print(ostream& out) const;
-    void printChain(ostream& out) const;
+    void printChain() const;
 };
 
 

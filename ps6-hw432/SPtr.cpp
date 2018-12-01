@@ -33,7 +33,9 @@ SPtr::operator=(const SPtr& sp) {
     reset();
     count = sp.count;
     target = sp.target; // copy pointer
-    ++*count;
+    if (count != nullptr){
+        ++*count;
+    }
     // cout << "  Copy assignment from Sptr " << sp.id() << " to " << id() << endl;
     return *this;
 }
