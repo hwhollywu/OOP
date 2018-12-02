@@ -20,9 +20,7 @@ public:
 	//--------------------------------------- Constructors
     // Constructors
     Block() : sp(SPtr()), level(0){}
-    Block(Block* b) : sp( SPtr(b) ), level( b->blkLevel()+1 ){
-        //cout << "New Block pointing to block : LEVEL " << (sp.getTarget())->blkLevel() << "ID"<< (sp.getTarget())->serialId() << endl;
-    }
+    Block(SPtr p) : sp( p ), level( (p.getTarget())->blkLevel()+1 ){}
     // Destructor
     ~Block()=default;
     // Delete copy constructor 

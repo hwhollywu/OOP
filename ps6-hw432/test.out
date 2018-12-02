@@ -4,3 +4,266 @@
 // Date: Dec 1, 2018.
 // ------------------------------------------------------------
 
+
+Test0: Produce an initial blockchain
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sun Dec  2 2018	14:04:26
+---------------------------------------------------------------
+Welcome to Blockchain World!
+Type 'H' for user instructions.
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: Q
+Program exit.
+---------------------------------------------------------------
+Normal termination.
+==2158== 
+==2158== HEAP SUMMARY:
+==2158==     in use at exit: 4 bytes in 1 blocks
+==2158==   total heap usage: 15 allocs, 14 frees, 81,810 bytes allocated
+==2158== 
+==2158== LEAK SUMMARY:
+==2158==    definitely lost: 0 bytes in 0 blocks
+==2158==    indirectly lost: 0 bytes in 0 blocks
+==2158==      possibly lost: 0 bytes in 0 blocks
+==2158==    still reachable: 4 bytes in 1 blocks
+==2158==         suppressed: 0 bytes in 0 blocks
+==2158== Rerun with --leak-check=full to see details of leaked memory
+==2158== 
+==2158== For counts of detected and suppressed errors, rerun with: -v
+==2158== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+
+Test1: Produce a blockchain like the one in Figure 1
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sun Dec  2 2018	14:02:05
+---------------------------------------------------------------
+Welcome to Blockchain World!
+Type 'H' for user instructions.
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: E1
+Extending Block 1
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: E3
+Extending Block 3
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1] [1,3]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: E1
+Extending Block 1
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2] [2,4]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1] [1,3]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: Q
+Program exit.
+---------------------------------------------------------------
+Normal termination.
+==2074== 
+==2074== HEAP SUMMARY:
+==2074==     in use at exit: 4 bytes in 1 blocks
+==2074==   total heap usage: 21 allocs, 20 frees, 81,894 bytes allocated
+==2074== 
+==2074== LEAK SUMMARY:
+==2074==    definitely lost: 0 bytes in 0 blocks
+==2074==    indirectly lost: 0 bytes in 0 blocks
+==2074==      possibly lost: 0 bytes in 0 blocks
+==2074==    still reachable: 4 bytes in 1 blocks
+==2074==         suppressed: 0 bytes in 0 blocks
+==2074== Rerun with --leak-check=full to see details of leaked memory
+==2074== 
+==2074== For counts of detected and suppressed errors, rerun with: -v
+==2074== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+
+Test2: Assigning other blockchains based on test1
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sun Dec  2 2018	14:05:05
+---------------------------------------------------------------
+Welcome to Blockchain World!
+Type 'H' for user instructions.
+Please enter your command: p
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: e1
+Extending Block 1
+Please enter your command: e2
+Extending Block 2
+Please enter your command: e1
+Extending Block 1
+Please enter your command: p
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2] [2,4]
+Blockchain 2:  [0,1] [1,3]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: a51
+Assigning Block 5 to be equal to Block 1
+Please enter your command: p
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2] [2,4]
+Blockchain 2:  [0,1] [1,3]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1] [1,2] [2,4]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: a62
+Assigning Block 6 to be equal to Block 2
+Please enter your command: p
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2] [2,4]
+Blockchain 2:  [0,1] [1,3]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1] [1,2] [2,4]
+Blockchain 6:  [0,1] [1,3]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: q
+Program exit.
+---------------------------------------------------------------
+Normal termination.
+==2204== 
+==2204== HEAP SUMMARY:
+==2204==     in use at exit: 4 bytes in 1 blocks
+==2204==   total heap usage: 21 allocs, 20 frees, 81,894 bytes allocated
+==2204== 
+==2204== LEAK SUMMARY:
+==2204==    definitely lost: 0 bytes in 0 blocks
+==2204==    indirectly lost: 0 bytes in 0 blocks
+==2204==      possibly lost: 0 bytes in 0 blocks
+==2204==    still reachable: 4 bytes in 1 blocks
+==2204==         suppressed: 0 bytes in 0 blocks
+==2204== Rerun with --leak-check=full to see details of leaked memory
+==2204== 
+==2204== For counts of detected and suppressed errors, rerun with: -v
+==2204== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+Test3: Invalid inputs for assigning and extending
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sun Dec  2 2018	14:06:29
+---------------------------------------------------------------
+Welcome to Blockchain World!
+Type 'H' for user instructions.
+Please enter your command: H
+- User Instruction for Blockchain -
+Valid inputs include the following single letters: 
+Ajk: Assign blockchain j to be equal to blockchain k; 
+Ej: Extends blockchain j; 
+P: Prints the blockchains in array, one per line;
+Q: to quit the game;
+------------------------------------
+Please enter your command: r
+The input is not valid! Type 'H' for help.
+Please enter your command: g
+The input is not valid! Type 'H' for help.
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: AA
+1
+Block index should be within range [0-9]!
+Please enter your command: EZ
+Block index should be within range [0-9]!
+Please enter your command: A21
+Assigning Block 2 to be equal to Block 1
+Please enter your command: E22
+Extending Block 2
+Please enter your command: The input is not valid! Type 'H' for help.
+Please enter your command: Q
+Program exit.
+---------------------------------------------------------------
+Normal termination.
+

@@ -19,17 +19,10 @@ print(ostream& out) const {
 void Block::
 printChain() const {
 	Block* prev = sp.getTarget();
-	// cout << " current BLOCK: " << "level "<<level << " Id "<<serialNo <<"!" << endl;
-
 	// recursive case
 	if (prev != nullptr){
-		cout << " current PREV: " << "level "<<prev->blkLevel() << " Id "<<prev->serialId() <<"!" << endl;
 		prev->printChain();
-		if (prev->last() != nullptr){
-			print(cout);
-		}
 	}
 	// base case
-	// cout << "base case prev==null" << endl;
 	print(cout);
 }

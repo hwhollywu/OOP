@@ -13,9 +13,7 @@
 Blockchain Blockchain::extend(){
 	// create a new block using the copy of smart pointer
 	// malloc space for the new block
-	// cout << "Extend:  PREV" << " level "<<sp.getTarget()->blkLevel() << " Id "<<sp.getTarget()->serialId() << endl;
-	Block* b = new Block(sp.getTarget());
-	// cout << "Extend:  NEW" << " level "<<b->blkLevel() << " Id "<<b->serialId() << endl;
+	Block* b = new Block(sp);
 	// return the new blockchain
 	return Blockchain(b);
 }

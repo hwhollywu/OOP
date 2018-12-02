@@ -51,6 +51,12 @@ https://en.cppreference.com/w/cpp/language/operator_comparison
 ----------------------------------------------------------
 4. Additional Note
 ------------------------------------------------------------
+test.out include the following test cases:
+Test0: Produce an initial blockchain using print
+Test1: Produce a blockchain like the one in Figure 1
+Test2: Assigning other blockchains based on test1
+Test3: Invalid commands testing, including invalid inputs 
+for assigning and extending
 
 
 
