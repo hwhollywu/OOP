@@ -14,31 +14,32 @@
 class Blockchain{
 
 private:
-	SPtr p;
+	SPtr sp;
 
 public:
 	//---------------------------------------- Constructors
     // Constructors
     Blockchain() =default;
-	Blockchain(SPtr sp) : p(sp){}
-    ~Blockchain() =default;
+	Blockchain(Block* b) : sp( SPtr(b) ){}
+    // Destructor
+    ~Blockchain()=default;
     // copy constructor
-    Blockchain( const Blockchain& bc )=default; 
+    Blockchain( const Blockchain& )=default; 
     // copy assignment   
-    Blockchain& operator=( const Blockchain& bc )=default;    
+    Blockchain& operator=( const Blockchain& )=default;    
     // Default move constructor
     Blockchain( Blockchain&& )=default;
     // Default move assignement
     Blockchain& operator=( Blockchain&& other)=default;
     //---------------------------------- Inline functions
     // returns a regular pointer to the last (most recent) block
-    Block* tail() {return p.getTarget();}
+    Block* tail() {return sp.getTarget();}
     // returns the length of current blockchain.
-    unsigned length(){return p.getTarget()->blkLevel(); } 
+    unsigned length(){return sp.getTarget()->blkLevel(); } 
 	//---------------------------------- Function Prototypes
 	Blockchain extend();
 	ostream& print(ostream& out) const;
-	// bool operator==(Blockchain &bc2);
+	bool operator==(Blockchain &bc2);
 };
 
 

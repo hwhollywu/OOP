@@ -17,7 +17,8 @@ private:
 
 public:
 	//---------------------------------------- Constructor
-    Driver();   
+    Driver() = default;   
+    ~Driver() = default;
 	//---------------------------------------- Prototype
 	void start();	
 };

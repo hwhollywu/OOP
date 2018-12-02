@@ -1,7 +1,7 @@
 // ----------------------------------------------------------
 // Notes/documentation file for Problem Set 6		notes.txt
 // Author: Hao Wu 
-// Date: Nov 27, 2018.
+// Date: Dec 1, 2018.
 // ----------------------------------------------------------
 
 ------------------------------------------------------------
@@ -19,17 +19,17 @@ This problem set consists of the following files:
 main.cpp -------- Main function. 
 tools.cpp ------- C++ tools library implementation files.
 tools.hpp ------- Header file for the C++ tools library.
-consensus2 ------ Execution file
-agent.hpp ------- Header file for pure abstract class agent 
-crowd.hpp ------- Header file for crowd, which inherits from agent
-fickle.hpp ------ Header file for fickle, which inherits from agent
-population.cpp -- Population implementation file.
-population.hpp -- Header file for population, which include both
-				  fickle and crowd agents.
-simulator.cpp --- Simulator model implementation file.
-simulator.hpp --- Header file for a simulator model.
-sample.in ------- official testcase input
-sample.out ------ official testcase output
+blockchain ------ Execution file
+Serial.cpp ------ Serializer class implementation file
+Serial.hpp ------ Singleton class for generating unique ID's
+SPtr.cpp -------- Smart pointer implementation file
+SPtr.hpp -------- Header file for smart pointer.
+block.cpp ------- Block class implementation file.
+block.hpp ------- Header file for a block.
+blockchain.cpp -- Blockchain class implementation file.
+blockchain.hpp -- Header file for a block chain structure.
+driver.cpp ------ Driver class implementation file.
+driver.hpp ------ Header file for a driver.
 test.out -------- Test cases of mine own
 
 ------------------------------------------------------------
@@ -37,7 +37,7 @@ test.out -------- Test cases of mine own
 ------------------------------------------------------------
 To run the program, type make and then ./blockchain to execute.
 The program takes in single letter commands as instructed in 
-the game class.
+the driver class.
 
 ------------------------------------------------------------
 3. Acknowledgement
@@ -46,7 +46,6 @@ I reuse the code for SPtr ans Serial classes from:
 http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
 
 C++ references:
-http://www.cplusplus.com/doc/tutorial/arrays/
 https://en.cppreference.com/w/cpp/language/operator_comparison
 
 ----------------------------------------------------------

@@ -6,23 +6,19 @@
 
 #include "driver.hpp"
 
-// ----------------------------------------------------------
-// Constructor
-Driver::Driver(){
-	// create the genesis block
- 	Block genesis; 
- 	// create a sp pointing to the genesis block
- 	SPtr sp(&genesis);
- 	// create the blockchain based on the sp
- 	Blockchain bc0(sp);
- 	for (int i = 0; i < 10; i++) {
- 	 	bc[i] = bc0;
- 	}
-}
 
 // ----------------------------------------------------------
 //  This function is a driver program for blockchain.
 void Driver::start(){
+	// create the genesis block
+	Block* genesis = new Block();  
+	// create blockchain based on the genesis block
+	Blockchain bc0(genesis); 
+ 	for (int i = 0; i < 10; i++) {
+ 		// copy the blockchain to the array
+ 	 	bc[i] = bc0;
+ 	}
+
 	char ch; // store single letter command
 	cout << "Welcome to Blockchain World!" << endl;
 	cout << "Type 'H' for user instructions." << endl; 
@@ -44,6 +40,7 @@ void Driver::start(){
 					continue;
 				}else{
 					cout << "Block index should be within range [0-9]!" <<endl;
+					cin.clear();
 					break;
 				}
 			// case 2: extend blockchains
@@ -58,6 +55,7 @@ void Driver::start(){
 					continue;
 				}else{
 					cout << "Block index should be within range [0-9]!" <<endl;
+					cin.clear();
 					break;
 				}
 			// case 3: prints the blockchains in array bc[]

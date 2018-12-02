@@ -7,41 +7,24 @@
 #include "blockchain.hpp"
 
 // ----------------------------------------------------------
-// Constructor
-/*
-Blockchain::Blockchain(){
-	// create the genesis block
- 	Block genesis; 
- 	// create a sp pointing to the genesis block
- 	SPtr sp(&genesis);
- 	p = sp;
-}
-
-Blockchain::Blockchain(SPtr sp) : p(sp){}
-*/
-
-
-// ----------------------------------------------------------
 // This function returns a new blockchain created by extending 
 // the current blockchain. The new chain should be stack-allocated 
 // and returned by value.
 Blockchain Blockchain::extend(){
-	// copy the old SP pointed to tail
-	SPtr pt_tail = p;
 	// create a new block using the copy of smart pointer
 	// malloc space for the new block
-	Block* b = new Block(pt_tail, length()+1);
-	SPtr pt_new(b);
-	// cout << "extend pt_new" << *(pt_new.getTarget()) << endl;
+	// cout << "Extend:  PREV" << " level "<<sp.getTarget()->blkLevel() << " Id "<<sp.getTarget()->serialId() << endl;
+	Block* b = new Block(sp.getTarget());
+	// cout << "Extend:  NEW" << " level "<<b->blkLevel() << " Id "<<b->serialId() << endl;
 	// return the new blockchain
-	return Blockchain(pt_new);
+	return Blockchain(b);
 }
 
 //-----------------------------------------------------------------------
 // Prints the blocks that comprise a blockchain in order of increasing level.
 ostream& Blockchain::
 print(ostream& out) const {
-	Block* prev = p.getTarget();
+	Block* prev = sp.getTarget();
 	prev->printChain();
 	out << endl;
 	return out;
@@ -49,7 +32,6 @@ print(ostream& out) const {
 
 //-----------------------------------------------------------------------
 // Operator == checks if two blockchains are equivalent.
-/*
 bool Blockchain::operator==(Blockchain &bc2){
 	// check if the length and each level of blockchains are equal 
 	if (length() != bc2.length()) return false;
@@ -65,5 +47,5 @@ bool Blockchain::operator==(Blockchain &bc2){
 	}
 	return true; 
 };
-*/
+
 
