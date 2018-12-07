@@ -15,8 +15,8 @@ void run(int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
 	banner();
-	// only pass the right number of arguments (5 or 6)
-	if (argc == 5 || argc == 6){
+	// only pass the right number of arguments 
+	if (argc == 6 || argc == 7){
 		run(argc, argv);
 	}else{
 		fatal("Wrong number of command line arguments!");
@@ -73,13 +73,9 @@ void run(int argc, char* argv[]) {
     Population ppl = Population(numAgents,probNak,probFickle,probExtend);
     cout << ppl;  // print population stats
 	// Declare and initialize the Simulator class.
-    Simulator s = Simulator(ppl,maxRounds);  
+    Simulator s = Simulator(ppl,maxRounds,probExtend);  
     // Execute the simulator function.
     s.run();    
-    // print results of simulation
-    cout << "Results of simulation:"<< endl;
-    cout << "      Rounds:  " << s.numRounds() << endl;
-    cout << "   Consensus:      " << s.consensusValue() << endl;
 }
 
 

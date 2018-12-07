@@ -13,18 +13,17 @@
 class Simulator{
 
 private:
-	int rounds;
     Population* ppl;
+    int maxRounds;
+    double probExtend;
 
 public:
 	//---------------------------------------- Constructors
-    Simulator(Population& p);
+    Simulator(Population& p, int r, double extend);
     ~Simulator() = default;
     //------------------------------------ Inline functions 
     // return the number of rounds of simulation
-    int numRounds()               { return rounds; }
-    // return the consensus value
-    int consensusValue()          { return ppl->consensusValue(); }
+    int numRounds()               { return maxRounds; }
 	//---------------------------------------- Prototypes
 	void run();  
 };

@@ -22,37 +22,30 @@ Population(int n,double nak, double fic, double extend){
 	probNak = nak;
 	probExtend = extend;
 	numFickle = 0;
+	numNak = 0;
 	numOne = 0;
 	// use dynamic aggregation
 	agents = new Agent*[numAgents]; 
-
 	// create the genesis block
 	Block* genesis = new Block();  
 	// create blockchain based on the genesis block
 	Blockchain bc0(genesis); 
 
-	for (int i = 0; i < n; i++){
-		// choose the initial choice value 
+	for (int i = 0; i < numAgents; i++){
+		// choose the initial choice value  ??
 		// by comparing probOne with random double r1
-		double r1 = dRandom();
+		// double r1 = dRandom();
 		// choose the agent type 
 		// by comparing probFickle and probCrowd with random double r2 and r3
 		double r2 = dRandom();
 		double r3 = dRandom();
-
-		agents[i] = new Fickle(bc0);
-
-		if (probOne > r1 && probFickle > r2){
-			agents[i] = new Fickle(1);
+		if (probFickle > r2){
+			agents[i] = new Fickle(bc0);
 			numFickle += 1;
-			numOne += 1;
-		}else if (probOne > r1 && probFickle <= r2){
-			agents[i] = new Crowd(1);
-			numOne += 1;
-		}else if (probOne <= r1 && probFickle > r2){
-			agents[i] = new Fickle(0);
-			numFickle += 1;
-		}else agents[i] = new Crowd(0);
+		}else if (probFickle <= r2 && probNak > r3){
+			agents[i] = new Nakamoto(bc0);
+			numNak += 1;
+		}else agents[i] = new Crowd(bc0);
 	}
 
 };  
@@ -88,6 +81,7 @@ void Population::
 extend(int receiver){
 	Blockchain bc_new = agents[receiver]->extend();
 	agents[receiver]->update(bc_new);
+	cout << "extend(" << receiver << ")" <<endl;
 	cout << "New blockchain: " << bc_new << endl;
 }
 
@@ -101,10 +95,10 @@ sendMessage(int sender, int receiver){
 	// the updated choice in receiver
 	Blockchain updated = agents[receiver]->choice(); 
 	// update numOne ??
-	if(updated != orig){
+	/* if(updated != orig){
 		if (orig == 0) numOne++;
 		else numOne--;
-	}
+	} */
 }
 
 

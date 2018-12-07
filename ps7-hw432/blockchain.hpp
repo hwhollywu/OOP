@@ -39,6 +39,7 @@ public:
 	//---------------------------------- Function Prototypes
 	Blockchain extend();
 	ostream& print(ostream& out) const;
+	bool operator==(Blockchain &bc2);
 };
 
 

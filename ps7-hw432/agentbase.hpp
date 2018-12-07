@@ -19,7 +19,7 @@ public:
 	// returns the current choice.
 	virtual Blockchain choice() const 			{ return ch; }
 	// extend the blockchain
-	virtual void extend() 						{ch.extend();}
+	virtual Blockchain extend() 				{ return ch.extend();}
 };
 
 

@@ -38,15 +38,14 @@ public:
 	//------------------------------------ Inline functions	
 	// Overwrite the update function
 	void update(Blockchain m){
-		if (st != m){
-			st = m;
+		if (st == m){
+            ch = m;
 		} else {
-			ch = m;
+			st = m;
 		}
 	 }
 	// returns the current state.
-	int state() const 					{ return st; }
-	
+	Blockchain state() const 					{ return st; }
 };
 
 #endif 

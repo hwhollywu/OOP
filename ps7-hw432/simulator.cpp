@@ -9,9 +9,10 @@
 //------------------------------------------------------------
 // Constructor
 Simulator::
-Simulator(Population& p){
-	rounds = 0;
+Simulator(Population& p, int r, double extend){
 	ppl = &p;
+	maxRounds = r;
+	probExtend = extend;
 };  
 
 // ----------------------------------------------------------
@@ -26,22 +27,37 @@ int uRandom( int n ) {
 }
 
 // ----------------------------------------------------------
-//  This function runs the simulation for as many rounds as 
-//  it takes to reach consensus. Return the consensus value.
+//  This function returns a random double in range [0,1)
+double d2Random() {
+   return random()/(RAND_MAX+1.0); 
+ }
+
+
+// ----------------------------------------------------------
+//  This function runs the simulation for the max rounds given.
 void Simulator::
 run(){
-	// keep taking random communication rounds 
-	while(!ppl->consensusReached()){
-		// increment number of rounds
-		rounds += 1;
-		// select a random pair of agents as sender and receiver 
+	for (int rod = 0; rod < maxRounds; rod++){
+		// use r to randomly decide to extend or update 
+		double r = d2Random();
 		int n = ppl->size();
-		int sender = uRandom(n);
-		int receiver = uRandom(n - 1);
-		//  keep sender and receiver distinct
-		if (receiver >= sender){
-			receiver += 1;
+
+		if (probExtend > r){
+			// to extend: choose an agent at random
+			int receiver = uRandom(n);
+			ppl->extend(receiver);
+		}else{
+			// to update: choose a sender and a receiver at random
+			int sender = uRandom(n);
+			int receiver = uRandom(n - 1);
+			//  keep sender and receiver distinct
+			if (receiver >= sender){
+				receiver += 1;
+			ppl->sendMessage(sender,receiver);
+			cout << "sendMessage(" << sender << ", " << receiver << ")" << endl;
+			}
 		}
-		ppl->sendMessage(sender,receiver);
 	}
+	// print out a list of agents with their current choices
+	ppl->printStats(cout);
 }

@@ -16,8 +16,8 @@ public:
 	// virtual destructor
     virtual ~Agent(){}
 	//--------------------------------- Virtual functions
-	virtual void update(int m) =0;
+	virtual void update(Blockchain m) =0;
 	virtual Blockchain choice() const =0;
-	virtual void extend() =0;
+	virtual Blockchain extend() =0;
 };
 

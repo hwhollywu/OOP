@@ -39,7 +39,7 @@ public:
     // Default constructor
     SPtr();
     // Construct an SPtr to manage p
-    SPtr(T* p);hw432-hw3
+    SPtr(T* p);
     // Copy constructor
     SPtr(const SPtr& sp);
     // Copy assignment

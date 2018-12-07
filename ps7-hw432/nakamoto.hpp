@@ -17,13 +17,13 @@ public:
     ~Nakamoto() = default;
     Nakamoto(Blockchain c){ ch = c; }
     // Default copy constructor 
-    Nakamoto( const Fickle& ) 		  		 =default;    
+    Nakamoto( const Nakamoto& )=default;    
     // Default copy assignment
-    Nakamoto& operator=( const Fickle& ) 	 =default;    
+    Nakamoto& operator=( const Nakamoto& )=default;    
     // Default move constructor
-    Nakamoto( Fickle&& )					 =default;
+    Nakamoto( Nakamoto&& )=default;
     // move assignement
-    Nakamoto& operator=( Fickle&& other){ 
+    Nakamoto& operator=( Nakamoto&& other){ 
     	ch = other.ch;
     	return *this;
     }
