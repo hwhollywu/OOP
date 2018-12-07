@@ -1,0 +1,57 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 7		notes.txt
+// Author: Hao Wu 
+// Date: Dec 7, 2018.
+// ----------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 6 for CPSC 527: Object-Oriented 
+Programming class, Fall 2018. 
+The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho09.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files:
+main.cpp -------- Main function. 
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+blockchain ------ Execution file
+Serial.cpp ------ Serializer class implementation file
+Serial.hpp ------ Singleton class for generating unique ID's
+SPtr.cpp -------- Smart pointer implementation file
+SPtr.hpp -------- Header file for smart pointer.
+block.cpp ------- Block class implementation file.
+block.hpp ------- Header file for a block.
+blockchain.cpp -- Blockchain class implementation file.
+blockchain.hpp -- Header file for a block chain structure.
+driver.cpp ------ Driver class implementation file.
+driver.hpp ------ Header file for a driver.
+test.out -------- Test cases of mine own
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./blockchain to execute.
+The program takes in single letter commands as instructed in 
+the driver class.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+I reuse the code for SPtr ans Serial classes from:
+http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
+
+C++ references:
+
+
+----------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+test.out include the following test cases:
+
+
+
