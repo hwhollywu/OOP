@@ -19,6 +19,14 @@ int main(int argc, char* argv[]) {
 	if (argc == 6 || argc == 7){
 		run(argc, argv);
 	}else{
+		cout << "Please give the following inputs: " << endl;
+		cout << "numAgents: the total number of agents " << endl;
+		cout << "maxRounds: the total number of simulation rounds to perform. " << endl;
+		cout << "probNak: the probability of selecting a Nakamoto agent when building the population." << endl;
+		cout << "probFickle: the probability of selecting a Fickle agent when building the population." << endl;
+		cout << "probExtend: the probability that the simulator chooses to simulate an extend() operation rather than a sendMessage() operation." << endl;
+		cout << "[seed]: optional seed for the random number generator" << endl;
+		cout << "sample input: blockchain 10 100 .9 .05 .1 1543782199" << endl;
 		fatal("Wrong number of command line arguments!");
 	}
 	bye();
@@ -37,16 +45,7 @@ void run(int argc, char* argv[]) {
 	double probCrowd = 1.0 - probNak - probFickle;
 	unsigned int seed;
 	cout << "Welcome to Consensus Simulator!" << endl;
-	/*
-	cout << "Please give the following inputs: " << endl;
-	cout << "numAgents: the total number of agents " << endl;
-	cout << "maxRounds: the total number of simulation rounds to perform. " << endl;
-	cout << "probNak: the probability of selecting a Nakamoto agent when building the population." << endl;
-	cout << "probFickle: the probability of selecting a Fickle agent when building the population." << endl;
-	cout << "probExtend: the probability that the simulator chooses to simulate an extend() operation rather than a sendMessage() operation." << endl;
-	cout << "[seed]: optional seed for the random number generator" << endl;
-	*/
-
+	
 	// check input
 	if (probNak > 1 || probNak < 0 || probFickle > 1 || probFickle < 0 || probExtend > 1 || probExtend < 0){
 		fatal("Wrong input! probNak, probFickle and probExtend should be in range [0,1].");

@@ -1,0 +1,1072 @@
+
+1. Wrong number of inputs
+
+./blockchain 10 100 0.9 0.05 
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:39:34
+---------------------------------------------------------------
+Please give the following inputs: 
+numAgents: the total number of agents 
+maxRounds: the total number of simulation rounds to perform. 
+probNak: the probability of selecting a Nakamoto agent when building the population.
+probFickle: the probability of selecting a Fickle agent when building the population.
+probExtend: the probability that the simulator chooses to simulate an extend() operation rather than a sendMessage() operation.
+[seed]: optional seed for the random number generator
+sample input: blockchain 10 100 .9 .05 .1 1543782199
+Wrong number of command line arguments!
+
+2. Wrong range of input for probabilities
+
+./blockchain 10 100 0.9 0.05 2 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:41:04
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! probNak, probFickle and probExtend should be in range [0,1].
+
+./blockchain 10 100 0.9 3 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:41:23
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! probNak, probFickle and probExtend should be in range [0,1].
+
+./blockchain 10 100 1.1 0.05 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:44:57
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! probNak, probFickle and probExtend should be in range [0,1].
+
+
+3. Small inputs for probabilities
+(probNak = 0.0, probFickle = 0.0, probExtend = 0.0)
+
+./blockchain 10 100 0 0.05 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:45:18
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    0
+  probFickle:   0.05
+  probExtend:    0.1
+
+Population statistics:
+      numNak:      0
+   numFickle:      1
+    numCrowd:      9
+     numOnes:      0
+  probExtend:    0.1
+
+Starting simulation with probExtend = 0.1
+  extend(0)
+  New blockchain:  [0,1] [1,33]
+  sendMessage(9, 5)
+  sendMessage(5, 6)
+  sendMessage(3, 2)
+  sendMessage(7, 6)
+  sendMessage(4, 6)
+  sendMessage(6, 9)
+  extend(3)
+  New blockchain:  [0,1] [1,54]
+  sendMessage(3, 7)
+  sendMessage(1, 0)
+  sendMessage(0, 5)
+  sendMessage(0, 5)
+  sendMessage(3, 4)
+  sendMessage(6, 0)
+  sendMessage(8, 5)
+  sendMessage(6, 9)
+  sendMessage(4, 8)
+  sendMessage(2, 0)
+  sendMessage(8, 5)
+  sendMessage(9, 0)
+  sendMessage(4, 7)
+  sendMessage(5, 4)
+  extend(5)
+  New blockchain:  [0,1] [1,99]
+  sendMessage(1, 9)
+  sendMessage(5, 1)
+  extend(4)
+  New blockchain:  [0,1] [1,108]
+  extend(4)
+  New blockchain:  [0,1] [1,108] [2,111]
+  sendMessage(5, 6)
+  sendMessage(7, 4)
+  sendMessage(3, 1)
+  sendMessage(4, 2)
+  sendMessage(7, 2)
+  sendMessage(3, 5)
+  sendMessage(9, 0)
+  sendMessage(2, 9)
+  sendMessage(7, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,141]
+  sendMessage(4, 8)
+  extend(4)
+  New blockchain:  [0,1] [1,141] [2,147]
+  sendMessage(7, 9)
+  sendMessage(0, 1)
+  sendMessage(6, 1)
+  sendMessage(4, 1)
+  sendMessage(7, 4)
+  sendMessage(8, 4)
+  sendMessage(1, 3)
+  sendMessage(8, 1)
+  extend(2)
+  New blockchain:  [0,1] [1,174]
+  sendMessage(9, 5)
+  sendMessage(4, 8)
+  sendMessage(2, 3)
+  sendMessage(5, 6)
+  sendMessage(9, 4)
+  extend(2)
+  New blockchain:  [0,1] [1,174] [2,192]
+  sendMessage(3, 8)
+  sendMessage(2, 1)
+  sendMessage(5, 3)
+  sendMessage(3, 2)
+  sendMessage(8, 7)
+  sendMessage(5, 4)
+  sendMessage(0, 6)
+  sendMessage(2, 1)
+  sendMessage(8, 2)
+  sendMessage(1, 8)
+  sendMessage(4, 5)
+  sendMessage(1, 9)
+  sendMessage(5, 6)
+  sendMessage(4, 1)
+  sendMessage(0, 6)
+  sendMessage(4, 7)
+  sendMessage(3, 4)
+  sendMessage(7, 0)
+  sendMessage(4, 3)
+  extend(4)
+  New blockchain:  [0,1] [1,252]
+  sendMessage(7, 6)
+  sendMessage(6, 2)
+  extend(7)
+  New blockchain:  [0,1] [1,261]
+  sendMessage(8, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,252] [2,267]
+  extend(3)
+  New blockchain:  [0,1] [1,270]
+  sendMessage(0, 3)
+  sendMessage(7, 1)
+  sendMessage(8, 6)
+  sendMessage(2, 4)
+  sendMessage(6, 8)
+  sendMessage(1, 3)
+  sendMessage(0, 1)
+  sendMessage(3, 4)
+  sendMessage(1, 2)
+  sendMessage(7, 0)
+  sendMessage(4, 5)
+  sendMessage(7, 4)
+  sendMessage(4, 7)
+  sendMessage(0, 8)
+  sendMessage(2, 3)
+  sendMessage(9, 3)
+  sendMessage(5, 6)
+  sendMessage(3, 8)
+  sendMessage(2, 9)
+  sendMessage(6, 4)
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1]
+Agent 1 choice:  [0,1]
+Agent 2 choice:  [0,1]
+Agent 3 choice:  [0,1]
+Agent 4 choice:  [0,1]
+Agent 5 choice:  [0,1]
+Agent 6 choice:  [0,1]
+Agent 7 choice:  [0,1]
+Agent 8 choice:  [0,1]
+Agent 9 choice:  [0,1]
+
+---------------------------------------------------------------
+Normal termination.
+
+./blockchain 10 100 0.9 0 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:45:59
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    0.9
+  probFickle:   0
+  probExtend:    0.1
+
+Population statistics:
+      numNak:      8
+   numFickle:      0
+    numCrowd:      2
+     numOnes:      0
+  probExtend:    0.1
+
+Starting simulation with probExtend = 0.1
+  extend(0)
+  New blockchain:  [0,1] [1,26]
+  sendMessage(9, 5)
+  sendMessage(5, 6)
+  sendMessage(3, 2)
+  sendMessage(7, 6)
+  sendMessage(4, 6)
+  sendMessage(6, 9)
+  extend(3)
+  New blockchain:  [0,1] [1,47]
+  sendMessage(3, 7)
+  sendMessage(1, 0)
+  sendMessage(0, 5)
+  sendMessage(0, 5)
+  sendMessage(3, 4)
+  sendMessage(6, 0)
+  sendMessage(8, 5)
+  sendMessage(6, 9)
+  sendMessage(4, 8)
+  sendMessage(2, 0)
+  sendMessage(8, 5)
+  sendMessage(9, 0)
+  sendMessage(4, 7)
+  sendMessage(5, 4)
+  extend(5)
+  New blockchain:  [0,1] [1,92]
+  sendMessage(1, 9)
+  sendMessage(5, 1)
+  extend(4)
+  New blockchain:  [0,1] [1,101]
+  extend(4)
+  New blockchain:  [0,1] [1,101] [2,104]
+  sendMessage(5, 6)
+  sendMessage(7, 4)
+  sendMessage(3, 1)
+  sendMessage(4, 2)
+  sendMessage(7, 2)
+  sendMessage(3, 5)
+  sendMessage(9, 0)
+  sendMessage(2, 9)
+  sendMessage(7, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,101] [2,104] [3,134]
+  sendMessage(4, 8)
+  extend(4)
+  New blockchain:  [0,1] [1,101] [2,104] [3,134] [4,140]
+  sendMessage(7, 9)
+  sendMessage(0, 1)
+  sendMessage(6, 1)
+  sendMessage(4, 1)
+  sendMessage(7, 4)
+  sendMessage(8, 4)
+  sendMessage(1, 3)
+  sendMessage(8, 1)
+  extend(2)
+  New blockchain:  [0,1] [1,101] [2,104] [3,167]
+  sendMessage(9, 5)
+  sendMessage(4, 8)
+  sendMessage(2, 3)
+  sendMessage(5, 6)
+  sendMessage(9, 4)
+  extend(2)
+  New blockchain:  [0,1] [1,101] [2,104] [3,167] [4,185]
+  sendMessage(3, 8)
+  sendMessage(2, 1)
+  sendMessage(5, 3)
+  sendMessage(3, 2)
+  sendMessage(8, 7)
+  sendMessage(5, 4)
+  sendMessage(0, 6)
+  sendMessage(2, 1)
+  sendMessage(8, 2)
+  sendMessage(1, 8)
+  sendMessage(4, 5)
+  sendMessage(1, 9)
+  sendMessage(5, 6)
+  sendMessage(4, 1)
+  sendMessage(0, 6)
+  sendMessage(4, 7)
+  sendMessage(3, 4)
+  sendMessage(7, 0)
+  sendMessage(4, 3)
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,245]
+  sendMessage(7, 6)
+  sendMessage(6, 2)
+  extend(7)
+  New blockchain:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+  sendMessage(8, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,245] [3,260]
+  extend(3)
+  New blockchain:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,263]
+  sendMessage(0, 3)
+  sendMessage(7, 1)
+  sendMessage(8, 6)
+  sendMessage(2, 4)
+  sendMessage(6, 8)
+  sendMessage(1, 3)
+  sendMessage(0, 1)
+  sendMessage(3, 4)
+  sendMessage(1, 2)
+  sendMessage(7, 0)
+  sendMessage(4, 5)
+  sendMessage(7, 4)
+  sendMessage(4, 7)
+  sendMessage(0, 8)
+  sendMessage(2, 3)
+  sendMessage(9, 3)
+  sendMessage(5, 6)
+  sendMessage(3, 8)
+  sendMessage(2, 9)
+  sendMessage(6, 4)
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+Agent 1 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+Agent 2 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+Agent 3 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,263]
+Agent 4 choice:  [0,1] [1,47] [2,245] [3,260]
+Agent 5 choice:  [0,1] [1,92]
+Agent 6 choice:  [0,1] [1,101] [2,104] [3,134] [4,140]
+Agent 7 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+Agent 8 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+Agent 9 choice:  [0,1] [1,101] [2,104] [3,134] [4,140] [5,254]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+./blockchain 10 100 0.9 0.05 0 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:46:23
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    0.9
+  probFickle:   0.05
+  probExtend:    0
+
+Population statistics:
+      numNak:      8
+   numFickle:      0
+    numCrowd:      2
+     numOnes:      0
+  probExtend:    0
+
+Starting simulation with probExtend = 0
+  sendMessage(0, 2)
+  sendMessage(3, 9)
+  sendMessage(3, 8)
+  sendMessage(0, 8)
+  sendMessage(7, 3)
+  sendMessage(6, 0)
+  sendMessage(8, 2)
+  sendMessage(6, 5)
+  sendMessage(9, 6)
+  sendMessage(4, 7)
+  sendMessage(9, 7)
+  sendMessage(8, 3)
+  sendMessage(5, 9)
+  sendMessage(8, 9)
+  sendMessage(8, 6)
+  sendMessage(4, 0)
+  sendMessage(0, 9)
+  sendMessage(5, 9)
+  sendMessage(1, 2)
+  sendMessage(1, 3)
+  sendMessage(3, 2)
+  sendMessage(6, 8)
+  sendMessage(1, 9)
+  sendMessage(5, 1)
+  sendMessage(4, 0)
+  sendMessage(7, 1)
+  sendMessage(6, 8)
+  sendMessage(5, 0)
+  sendMessage(7, 8)
+  sendMessage(1, 5)
+  sendMessage(4, 5)
+  sendMessage(0, 8)
+  sendMessage(1, 4)
+  sendMessage(8, 9)
+  sendMessage(8, 9)
+  sendMessage(4, 8)
+  sendMessage(4, 2)
+  sendMessage(8, 6)
+  sendMessage(0, 3)
+  sendMessage(4, 1)
+  sendMessage(3, 6)
+  sendMessage(8, 2)
+  sendMessage(7, 5)
+  sendMessage(9, 0)
+  sendMessage(1, 5)
+  sendMessage(5, 6)
+  sendMessage(5, 3)
+  sendMessage(2, 3)
+  sendMessage(4, 1)
+  sendMessage(0, 3)
+  sendMessage(6, 3)
+  sendMessage(3, 8)
+  sendMessage(2, 1)
+  sendMessage(5, 3)
+  sendMessage(3, 2)
+  sendMessage(8, 7)
+  sendMessage(5, 4)
+  sendMessage(0, 6)
+  sendMessage(2, 1)
+  sendMessage(8, 2)
+  sendMessage(1, 8)
+  sendMessage(4, 5)
+  sendMessage(1, 9)
+  sendMessage(5, 6)
+  sendMessage(4, 1)
+  sendMessage(0, 6)
+  sendMessage(4, 7)
+  sendMessage(3, 4)
+  sendMessage(7, 0)
+  sendMessage(4, 3)
+  sendMessage(4, 9)
+  sendMessage(7, 0)
+  sendMessage(2, 3)
+  sendMessage(9, 8)
+  sendMessage(5, 4)
+  sendMessage(3, 8)
+  sendMessage(0, 2)
+  sendMessage(6, 8)
+  sendMessage(1, 3)
+  sendMessage(0, 2)
+  sendMessage(8, 6)
+  sendMessage(5, 3)
+  sendMessage(2, 4)
+  sendMessage(1, 0)
+  sendMessage(9, 4)
+  sendMessage(8, 6)
+  sendMessage(8, 6)
+  sendMessage(8, 9)
+  sendMessage(6, 5)
+  sendMessage(0, 7)
+  sendMessage(6, 4)
+  sendMessage(7, 4)
+  sendMessage(8, 2)
+  sendMessage(3, 5)
+  sendMessage(6, 5)
+  sendMessage(3, 6)
+  sendMessage(8, 0)
+  sendMessage(7, 2)
+  sendMessage(1, 8)
+  sendMessage(3, 6)
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1]
+Agent 1 choice:  [0,1]
+Agent 2 choice:  [0,1]
+Agent 3 choice:  [0,1]
+Agent 4 choice:  [0,1]
+Agent 5 choice:  [0,1]
+Agent 6 choice:  [0,1]
+Agent 7 choice:  [0,1]
+Agent 8 choice:  [0,1]
+Agent 9 choice:  [0,1]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+
+4. Large inputs for probabilities
+(probNak = 1.0, probFickle = 1.0, probExtend = 1.0)
+
+./blockchain 10 100 1 0 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:47:15
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    1
+  probFickle:   0
+  probExtend:    0.1
+
+Population statistics:
+      numNak:      10
+   numFickle:      0
+    numCrowd:      0
+     numOnes:      0
+  probExtend:    0.1
+
+Starting simulation with probExtend = 0.1
+  extend(0)
+  New blockchain:  [0,1] [1,24]
+  sendMessage(9, 5)
+  sendMessage(5, 6)
+  sendMessage(3, 2)
+  sendMessage(7, 6)
+  sendMessage(4, 6)
+  sendMessage(6, 9)
+  extend(3)
+  New blockchain:  [0,1] [1,45]
+  sendMessage(3, 7)
+  sendMessage(1, 0)
+  sendMessage(0, 5)
+  sendMessage(0, 5)
+  sendMessage(3, 4)
+  sendMessage(6, 0)
+  sendMessage(8, 5)
+  sendMessage(6, 9)
+  sendMessage(4, 8)
+  sendMessage(2, 0)
+  sendMessage(8, 5)
+  sendMessage(9, 0)
+  sendMessage(4, 7)
+  sendMessage(5, 4)
+  extend(5)
+  New blockchain:  [0,1] [1,24] [2,90]
+  sendMessage(1, 9)
+  sendMessage(5, 1)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99]
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102]
+  sendMessage(5, 6)
+  sendMessage(7, 4)
+  sendMessage(3, 1)
+  sendMessage(4, 2)
+  sendMessage(7, 2)
+  sendMessage(3, 5)
+  sendMessage(9, 0)
+  sendMessage(2, 9)
+  sendMessage(7, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132]
+  sendMessage(4, 8)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138]
+  sendMessage(7, 9)
+  sendMessage(0, 1)
+  sendMessage(6, 1)
+  sendMessage(4, 1)
+  sendMessage(7, 4)
+  sendMessage(8, 4)
+  sendMessage(1, 3)
+  sendMessage(8, 1)
+  extend(2)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,165]
+  sendMessage(9, 5)
+  sendMessage(4, 8)
+  sendMessage(2, 3)
+  sendMessage(5, 6)
+  sendMessage(9, 4)
+  extend(2)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,165] [5,183]
+  sendMessage(3, 8)
+  sendMessage(2, 1)
+  sendMessage(5, 3)
+  sendMessage(3, 2)
+  sendMessage(8, 7)
+  sendMessage(5, 4)
+  sendMessage(0, 6)
+  sendMessage(2, 1)
+  sendMessage(8, 2)
+  sendMessage(1, 8)
+  sendMessage(4, 5)
+  sendMessage(1, 9)
+  sendMessage(5, 6)
+  sendMessage(4, 1)
+  sendMessage(0, 6)
+  sendMessage(4, 7)
+  sendMessage(3, 4)
+  sendMessage(7, 0)
+  sendMessage(4, 3)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243]
+  sendMessage(7, 6)
+  sendMessage(6, 2)
+  extend(7)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+  sendMessage(8, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243] [7,258]
+  extend(3)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,261]
+  sendMessage(0, 3)
+  sendMessage(7, 1)
+  sendMessage(8, 6)
+  sendMessage(2, 4)
+  sendMessage(6, 8)
+  sendMessage(1, 3)
+  sendMessage(0, 1)
+  sendMessage(3, 4)
+  sendMessage(1, 2)
+  sendMessage(7, 0)
+  sendMessage(4, 5)
+  sendMessage(7, 4)
+  sendMessage(4, 7)
+  sendMessage(0, 8)
+  sendMessage(2, 3)
+  sendMessage(9, 3)
+  sendMessage(5, 6)
+  sendMessage(3, 8)
+  sendMessage(2, 9)
+  sendMessage(6, 4)
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+Agent 1 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+Agent 2 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+Agent 3 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,261]
+Agent 4 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243] [7,258]
+Agent 5 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243] [7,258]
+Agent 6 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243] [7,258]
+Agent 7 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,243] [7,258]
+Agent 8 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+Agent 9 choice:  [0,1] [1,45] [2,99] [3,102] [4,132] [5,138] [6,252]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+./blockchain 10 100 0 1 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:47:32
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    0
+  probFickle:   1
+  probExtend:    0.1
+
+Population statistics:
+      numNak:      0
+   numFickle:      10
+    numCrowd:      0
+     numOnes:      0
+  probExtend:    0.1
+
+Starting simulation with probExtend = 0.1
+  extend(0)
+  New blockchain:  [0,1] [1,24]
+  sendMessage(9, 5)
+  sendMessage(5, 6)
+  sendMessage(3, 2)
+  sendMessage(7, 6)
+  sendMessage(4, 6)
+  sendMessage(6, 9)
+  extend(3)
+  New blockchain:  [0,1] [1,45]
+  sendMessage(3, 7)
+  sendMessage(1, 0)
+  sendMessage(0, 5)
+  sendMessage(0, 5)
+  sendMessage(3, 4)
+  sendMessage(6, 0)
+  sendMessage(8, 5)
+  sendMessage(6, 9)
+  sendMessage(4, 8)
+  sendMessage(2, 0)
+  sendMessage(8, 5)
+  sendMessage(9, 0)
+  sendMessage(4, 7)
+  sendMessage(5, 4)
+  extend(5)
+  New blockchain:  [0,1] [1,45] [2,90]
+  sendMessage(1, 9)
+  sendMessage(5, 1)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99]
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,99] [3,102]
+  sendMessage(5, 6)
+  sendMessage(7, 4)
+  sendMessage(3, 1)
+  sendMessage(4, 2)
+  sendMessage(7, 2)
+  sendMessage(3, 5)
+  sendMessage(9, 0)
+  sendMessage(2, 9)
+  sendMessage(7, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,132]
+  sendMessage(4, 8)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,132] [3,138]
+  sendMessage(7, 9)
+  sendMessage(0, 1)
+  sendMessage(6, 1)
+  sendMessage(4, 1)
+  sendMessage(7, 4)
+  sendMessage(8, 4)
+  sendMessage(1, 3)
+  sendMessage(8, 1)
+  extend(2)
+  New blockchain:  [0,1] [1,45] [2,165]
+  sendMessage(9, 5)
+  sendMessage(4, 8)
+  sendMessage(2, 3)
+  sendMessage(5, 6)
+  sendMessage(9, 4)
+  extend(2)
+  New blockchain:  [0,1] [1,45] [2,165] [3,183]
+  sendMessage(3, 8)
+  sendMessage(2, 1)
+  sendMessage(5, 3)
+  sendMessage(3, 2)
+  sendMessage(8, 7)
+  sendMessage(5, 4)
+  sendMessage(0, 6)
+  sendMessage(2, 1)
+  sendMessage(8, 2)
+  sendMessage(1, 8)
+  sendMessage(4, 5)
+  sendMessage(1, 9)
+  sendMessage(5, 6)
+  sendMessage(4, 1)
+  sendMessage(0, 6)
+  sendMessage(4, 7)
+  sendMessage(3, 4)
+  sendMessage(7, 0)
+  sendMessage(4, 3)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,243]
+  sendMessage(7, 6)
+  sendMessage(6, 2)
+  extend(7)
+  New blockchain:  [0,1] [1,45] [2,252]
+  sendMessage(8, 9)
+  extend(4)
+  New blockchain:  [0,1] [1,45] [2,243] [3,258]
+  extend(3)
+  New blockchain:  [0,1] [1,45] [2,261]
+  sendMessage(0, 3)
+  sendMessage(7, 1)
+  sendMessage(8, 6)
+  sendMessage(2, 4)
+  sendMessage(6, 8)
+  sendMessage(1, 3)
+  sendMessage(0, 1)
+  sendMessage(3, 4)
+  sendMessage(1, 2)
+  sendMessage(7, 0)
+  sendMessage(4, 5)
+  sendMessage(7, 4)
+  sendMessage(4, 7)
+  sendMessage(0, 8)
+  sendMessage(2, 3)
+  sendMessage(9, 3)
+  sendMessage(5, 6)
+  sendMessage(3, 8)
+  sendMessage(2, 9)
+  sendMessage(6, 4)
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1] [1,45] [2,252]
+Agent 1 choice:  [0,1] [1,45]
+Agent 2 choice:  [0,1] [1,45]
+Agent 3 choice:  [0,1] [1,45]
+Agent 4 choice:  [0,1] [1,45] [2,252]
+Agent 5 choice:  [0,1] [1,45] [2,252]
+Agent 6 choice:  [0,1] [1,45] [2,252]
+Agent 7 choice:  [0,1] [1,45] [2,252]
+Agent 8 choice:  [0,1] [1,45]
+Agent 9 choice:  [0,1] [1,45]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+./blockchain 10 100 0.9 0.05 1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:47:49
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1543782199
+   numAgents:     10
+   maxRounds:    100
+     probNak:    0.9
+  probFickle:   0.05
+  probExtend:    1
+
+Population statistics:
+      numNak:      8
+   numFickle:      0
+    numCrowd:      2
+     numOnes:      0
+  probExtend:    1
+
+Starting simulation with probExtend = 1
+  extend(0)
+  New blockchain:  [0,1] [1,26]
+  extend(9)
+  New blockchain:  [0,1] [1,29]
+  extend(3)
+  New blockchain:  [0,1] [1,32]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38]
+  extend(5)
+  New blockchain:  [0,1] [1,41]
+  extend(7)
+  New blockchain:  [0,1] [1,44]
+  extend(4)
+  New blockchain:  [0,1] [1,47]
+  extend(6)
+  New blockchain:  [0,1] [1,50]
+  extend(8)
+  New blockchain:  [0,1] [1,53]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71]
+  extend(1)
+  New blockchain:  [0,1] [1,74]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80]
+  extend(2)
+  New blockchain:  [0,1] [1,83]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86] [3,89]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68] [3,92]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68] [3,92] [4,98]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86] [3,89] [4,104]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68] [3,92] [4,98] [5,131]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122] [4,140]
+  extend(6)
+  New blockchain:  [0,1] [1,50] [2,143]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86] [3,89] [4,104] [5,179]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68] [3,92] [4,98] [5,131] [6,197]
+  extend(6)
+  New blockchain:  [0,1] [1,50] [2,143] [3,200]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149] [11,206]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149] [11,206] [12,212]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209] [9,215]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218] [8,224]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173] [7,230]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122] [4,140] [5,233]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242] [13,245]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173] [7,230] [8,248]
+  extend(6)
+  New blockchain:  [0,1] [1,50] [2,143] [3,200] [4,251]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149] [11,206] [12,212] [13,254]
+  extend(0)
+  New blockchain:  [0,1] [1,26] [2,68] [3,92] [4,98] [5,131] [6,197] [7,257]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239] [7,260]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239] [7,260] [8,263]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173] [7,230] [8,248] [9,266]
+  extend(3)
+  New blockchain:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149] [11,206] [12,212] [13,254] [14,269]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242] [13,245] [14,272]
+  extend(9)
+  New blockchain:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173] [7,230] [8,248] [9,266] [10,275]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122] [4,140] [5,233] [6,278]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209] [9,215] [10,281]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86] [3,89] [4,104] [5,179] [6,284]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239] [7,260] [8,263] [9,287]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209] [9,215] [10,281] [11,290]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122] [4,140] [5,233] [6,278] [7,293]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218] [8,224] [9,296]
+  extend(2)
+  New blockchain:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239] [7,260] [8,263] [9,287] [10,299]
+  extend(7)
+  New blockchain:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209] [9,215] [10,281] [11,290] [12,302]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218] [8,224] [9,296] [10,305]
+  extend(5)
+  New blockchain:  [0,1] [1,41] [2,80] [3,122] [4,140] [5,233] [6,278] [7,293] [8,308]
+  extend(6)
+  New blockchain:  [0,1] [1,50] [2,143] [3,200] [4,251] [5,311]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242] [13,245] [14,272] [15,314]
+  extend(8)
+  New blockchain:  [0,1] [1,53] [2,86] [3,89] [4,104] [5,179] [6,284] [7,317]
+  extend(1)
+  New blockchain:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218] [8,224] [9,296] [10,305] [11,320]
+  extend(4)
+  New blockchain:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242] [13,245] [14,272] [15,314] [16,323]
+Current blockchain choices after 100 rounds:
+Agent 0 choice:  [0,1] [1,26] [2,68] [3,92] [4,98] [5,131] [6,197] [7,257]
+Agent 1 choice:  [0,1] [1,74] [2,107] [3,125] [4,155] [5,170] [6,185] [7,218] [8,224] [9,296] [10,305] [11,320]
+Agent 2 choice:  [0,1] [1,83] [2,146] [3,164] [4,182] [5,227] [6,239] [7,260] [8,263] [9,287] [10,299]
+Agent 3 choice:  [0,1] [1,32] [2,35] [3,38] [4,56] [5,59] [6,77] [7,110] [8,116] [9,119] [10,149] [11,206] [12,212] [13,254] [14,269]
+Agent 4 choice:  [0,1] [1,47] [2,95] [3,113] [4,134] [5,137] [6,161] [7,188] [8,194] [9,203] [10,221] [11,236] [12,242] [13,245] [14,272] [15,314] [16,323]
+Agent 5 choice:  [0,1] [1,41] [2,80] [3,122] [4,140] [5,233] [6,278] [7,293] [8,308]
+Agent 6 choice:  [0,1] [1,50] [2,143] [3,200] [4,251] [5,311]
+Agent 7 choice:  [0,1] [1,44] [2,101] [3,128] [4,152] [5,158] [6,176] [7,191] [8,209] [9,215] [10,281] [11,290] [12,302]
+Agent 8 choice:  [0,1] [1,53] [2,86] [3,89] [4,104] [5,179] [6,284] [7,317]
+Agent 9 choice:  [0,1] [1,29] [2,62] [3,65] [4,71] [5,167] [6,173] [7,230] [8,248] [9,266] [10,275]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+
+5. Edge cases for probabilities
+(probNak + probFickle >=1)
+
+ ./blockchain 10 100 1 0.05 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:47:02
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! The probability of selecting a Crowd agent should be in range [0,1].
+
+./blockchain 10 100 1 1 0.1 1543782199
+
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Sat Dec  8 2018	16:48:07
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! The probability of selecting a Crowd agent should be in range [0,1].
+
+
+
+

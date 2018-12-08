@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 0. Programming Notes
 ------------------------------------------------------------
-This is the problem set 6 for CPSC 527: Object-Oriented 
+This is the problem set 7 for CPSC 527: Object-Oriented 
 Programming class, Fall 2018. 
 The assignment details can be found at 
 http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho09.pdf
@@ -20,6 +20,18 @@ main.cpp -------- Main function.
 tools.cpp ------- C++ tools library implementation files.
 tools.hpp ------- Header file for the C++ tools library.
 blockchain ------ Execution file
+
+The following files are from ps5:
+agent.hpp ------- Header file for pure abstract class agent 
+crowd.hpp ------- Header file for crowd, which inherits from agent
+fickle.hpp ------ Header file for fickle, which inherits from agent
+population.cpp -- Population implementation file.
+population.hpp -- Header file for population, which include both
+				  fickle and crowd agents.
+simulator.cpp --- Simulator model implementation file.
+simulator.hpp --- Header file for a simulator model.
+
+The following files are from ps6:
 Serial.cpp ------ Serializer class implementation file
 Serial.hpp ------ Singleton class for generating unique ID's
 SPtr.cpp -------- Smart pointer implementation file
@@ -28,9 +40,18 @@ block.cpp ------- Block class implementation file.
 block.hpp ------- Header file for a block.
 blockchain.cpp -- Blockchain class implementation file.
 blockchain.hpp -- Header file for a block chain structure.
-driver.cpp ------ Driver class implementation file.
-driver.hpp ------ Header file for a driver.
-test.out -------- Test cases of mine own
+
+New files created for this problem set:
+agentbase.hpp --- Header file for agentbase, which inherits from agent
+				  and is inherited by three kinds of agents
+nakamoto.hpp ---- Header file for nakamoto, a new kind of agent
+Moreover, population.cpp, population.hpp, simulator.cpp, simulator.hpp, agent.hpp
+crowd.hpp, fickle.hpp classes are changed accordingly
+
+sample.sh ------- official testcase input
+sample.out ------ official testcase output
+mysample.out ---- My test output from sample.sh
+mytest.out ------ Test cases of mine own
 
 ------------------------------------------------------------
 2. How to run
@@ -45,13 +66,35 @@ the driver class.
 I reuse the code for SPtr ans Serial classes from:
 http://zoo.cs.yale.edu/classes/cs427/2018f/lectures/21a-SmartPointer-v2/
 
-C++ references:
-
-
 ----------------------------------------------------------
 4. Additional Note
 ------------------------------------------------------------
-test.out include the following test cases:
+The only difference between sample.out and mysample.out is 
+the serial numbers of blocks.
+
+mytest.out include the following test cases:
+1. Wrong number of inputs
+2. Wrong range of input for probabilities 
+(probNak, probFickle and probExtend)
+3. Small inputs for probabilities
+(probNak = 0.0, probFickle = 0.0, probExtend = 0.0)
+4. Large inputs for probabilities
+(probNak = 1.0, probFickle = 1.0, probExtend = 1.0)
+5. Edge cases for probabilities
+(probNak + probFickle >=1)
+
+
+Observations:
+When probExtend is 0, the simulator only send messages instead of extending,
+and therefore the resulting population will only be the starting blockchain
+with all genesis blocks. When probExtend is 1, the simulator only extends
+and the resulting population will be very long blockchains.
+When probNak is 0, the blockchains may be replaced by shorter blockchains, 
+and if the probExtend is also small, the resulting blockchains will be short.
+When probNak is 1 or very large, the sulting blockchians tend to be long.
+
+
+
 
 
 
