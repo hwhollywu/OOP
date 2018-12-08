@@ -81,7 +81,7 @@ print(ostream& out) const {
 void Population::
 extend(int receiver){
 	Blockchain bc_new = agents[receiver]->extend();
-	agents[receiver]->update(bc_new);
+	((AgentBase*) agents[receiver])->ch = bc_new;
 	cout << "  extend(" << receiver << ")" <<endl;
 	cout << "  New blockchain: " << bc_new;
 }

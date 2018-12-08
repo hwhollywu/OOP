@@ -13,7 +13,7 @@ class Block{
 
 private:
     SPtr sp;
-	const int serialNo = Serial::newID(); 
+	const int serialNo = sp.id(); 
     const int level;
 	
 public:
