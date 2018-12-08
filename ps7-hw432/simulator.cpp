@@ -27,37 +27,32 @@ int uRandom( int n ) {
 }
 
 // ----------------------------------------------------------
-//  This function returns a random double in range [0,1)
-double d2Random() {
-   return random()/(RAND_MAX+1.0); 
- }
-
-
-// ----------------------------------------------------------
 //  This function runs the simulation for the max rounds given.
 void Simulator::
 run(){
+	cout << "Starting simulation with probExtend = "<<probExtend<<endl;
 	for (int rod = 0; rod < maxRounds; rod++){
 		// use r to randomly decide to extend or update 
-		double r = d2Random();
+		double r = random()/(RAND_MAX+1.0); 
 		int n = ppl->size();
+		// use u1 as a random receiver/sender number
+		int u1 = uRandom(n);
 
 		if (probExtend > r){
 			// to extend: choose an agent at random
-			int receiver = uRandom(n);
-			ppl->extend(receiver);
+			ppl->extend(u1);
 		}else{
-			// to update: choose a sender and a receiver at random
-			int sender = uRandom(n);
-			int receiver = uRandom(n - 1);
+			// to update: choose another receiver at random
+			int u2 = uRandom(n - 1);
 			//  keep sender and receiver distinct
-			if (receiver >= sender){
-				receiver += 1;
-			ppl->sendMessage(sender,receiver);
-			cout << "sendMessage(" << sender << ", " << receiver << ")" << endl;
-			}
+			if (u2 >= u1){
+				u2 += 1;
+			}			
+			cout << "  sendMessage(" << u1 << ", " << u2 << ")" << endl;
+			ppl->sendMessage(u1,u2);
 		}
 	}
 	// print out a list of agents with their current choices
-	ppl->printStats(cout);
+	cout << "Current blockchain choices after "<<maxRounds<<" rounds:"<<endl;
+	ppl->print(cout);
 }

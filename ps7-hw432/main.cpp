@@ -64,11 +64,12 @@ void run(int argc, char* argv[]) {
 	srand(seed);
 	// print initial parameters
     cout << "Using seed: " << seed << endl;
-    cout << "   numAgents:	 " << numAgents << endl;
-    cout << "  maxRounds:    " << maxRounds << endl;
+    cout << "   numAgents:     " << numAgents << endl;
+    cout << "   maxRounds:    " << maxRounds << endl;
     cout << "     probNak:    " << probNak << endl;
-    cout << "  probFickle:    " << probFickle << endl;
+    cout << "  probFickle:   " << probFickle << endl;
     cout << "  probExtend:    " << probExtend << endl;
+    cout << endl;
     // Declare and initilize a population class
     Population ppl = Population(numAgents,probNak,probFickle,probExtend);
     cout << ppl;  // print population stats

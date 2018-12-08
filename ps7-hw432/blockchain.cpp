@@ -28,23 +28,13 @@ print(ostream& out) const {
 	return out;
 }
 
-
-
-
 //-----------------------------------------------------------------------
 // Operator == checks if two blockchains are equivalent.
 bool Blockchain::operator==(Blockchain &bc2){
 	// check if the length and each level of blockchains are equal 
 	if (length() != bc2.length()) return false;
-	else{ 
-		Block* tail1 = tail();
-		Block* tail2 = bc2.tail();
-		while(tail1 != nullptr && tail2 != nullptr){
-			if(tail1->blkLevel() != tail2->blkLevel()) return false;
-			tail1 = tail1->last();
-			tail2 = tail2->last();
-		}
-		if (tail1 != nullptr || tail2 != nullptr) return false;
-	}
-	return true; 
+	Block* tail1 = tail();
+	Block* tail2 = bc2.tail();
+	if(tail1 -> serialId() != tail2 -> serialId()) return false;
+	else return true; 
 };

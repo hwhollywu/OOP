@@ -37,14 +37,13 @@ Population(int n,double nak, double fic, double extend){
 		// double r1 = dRandom();
 		// choose the agent type 
 		// by comparing probFickle and probCrowd with random double r2 and r3
-		double r2 = dRandom();
-		double r3 = dRandom();
-		if (probFickle > r2){
-			agents[i] = new Fickle(bc0);
-			numFickle += 1;
-		}else if (probFickle <= r2 && probNak > r3){
+		double r = dRandom();
+		if (probNak > r){
 			agents[i] = new Nakamoto(bc0);
 			numNak += 1;
+		}else if (probFickle > r){
+			agents[i] = new Fickle(bc0);
+			numFickle += 1;
 		}else agents[i] = new Crowd(bc0);
 	}
 
@@ -56,11 +55,12 @@ Population(int n,double nak, double fic, double extend){
 std::ostream& Population::
 printStats(ostream& out) const {
 	out << "Population statistics:" << endl;
-	out << "      numNak:    "<< numNak << endl;
-	out << "   numFickle:    "<< numFickle << endl;
-	out << "    numCrowd:    "<< (numAgents - numNak - numFickle) << endl;
-	out << "     numOnes:    "<< numOne << endl;
+	out << "      numNak:      "<< numNak << endl;
+	out << "   numFickle:      "<< numFickle << endl;
+	out << "    numCrowd:      "<< (numAgents - numNak - numFickle) << endl;
+	out << "     numOnes:      "<< numOne << endl;
 	out << "  probExtend:    " << probExtend << endl;
+	out << endl;
 	return out;
 }
 
@@ -69,6 +69,7 @@ printStats(ostream& out) const {
 std::ostream& Population::
 print(ostream& out) const {
 	for (int i = 0; i < numAgents; i++){
+		out <<"Agent "<<i<<" choice: ";
 		Blockchain bc = agents[i]->choice();
 		bc.print(out);
 	}
@@ -81,8 +82,8 @@ void Population::
 extend(int receiver){
 	Blockchain bc_new = agents[receiver]->extend();
 	agents[receiver]->update(bc_new);
-	cout << "extend(" << receiver << ")" <<endl;
-	cout << "New blockchain: " << bc_new << endl;
+	cout << "  extend(" << receiver << ")" <<endl;
+	cout << "  New blockchain: " << bc_new;
 }
 
 //-----------------------------------------------------------------------
