@@ -1,0 +1,86 @@
+// ----------------------------------------------------------
+// Notes/documentation file for Problem Set 8		notes.txt
+// Author: Hao Wu 
+// Date: Dec 7, 2018.
+// ----------------------------------------------------------
+
+------------------------------------------------------------
+0. Programming Notes
+------------------------------------------------------------
+This is the problem set 8 for CPSC 527: Object-Oriented 
+Programming class, Fall 2018. 
+The assignment details can be found at 
+http://zoo.cs.yale.edu/classes/cs427/2018f/handouts/ho10.pdf
+
+------------------------------------------------------------
+1. Files
+------------------------------------------------------------
+This problem set consists of the following files from ps7:
+main.cpp -------- Main function. 
+tools.cpp ------- C++ tools library implementation files.
+tools.hpp ------- Header file for the C++ tools library.
+blockchain ------ Execution file
+agent.hpp ------- Header file for pure abstract class agent 
+agentbase.hpp --- Header file for agentbase, which inherits from agent
+				  and is inherited by three kinds of agents
+nakamoto.hpp ---- Header file for nakamoto, which inherits from agentbase
+crowd.hpp ------- Header file for crowd, which inherits from agentbase
+fickle.hpp ------ Header file for fickle, which inherits from agentbase
+population.cpp -- Population implementation file.
+population.hpp -- Header file for population, which include both
+				  fickle and crowd agents.
+simulator.cpp --- Simulator model implementation file.
+simulator.hpp --- Header file for a simulator model.
+Serial.cpp ------ Serializer class implementation file
+Serial.hpp ------ Singleton class for generating unique ID's
+SPtr.cpp -------- Smart pointer implementation file
+SPtr.hpp -------- Header file for smart pointer.
+block.cpp ------- Block class implementation file.
+block.hpp ------- Header file for a block.
+blockchain.cpp -- Blockchain class implementation file.
+blockchain.hpp -- Header file for a block chain structure.
+
+New files created for this problem set:
+inventory.cpp -- Inventory class implementation file.
+inventory.hpp -- Header file for an inventory structure.
+Moreover, blockchain and population classes are changed accordingly.
+
+sample.sh ------- official testcase input
+sample.out ------ official testcase output
+mysample.out ---- My test output from sample.sh
+mytest.out ------ Test cases of mine own
+
+------------------------------------------------------------
+2. How to run
+------------------------------------------------------------
+To run the program, type make and then ./blockchain to execute.
+The program takes in single letter commands as instructed in 
+the driver class.
+
+------------------------------------------------------------
+3. Acknowledgement
+------------------------------------------------------------
+C++ references:
+http://www.cplusplus.com/reference/map/map/
+http://www.cplusplus.com/reference/map/map/map/
+
+----------------------------------------------------------
+4. Additional Note
+------------------------------------------------------------
+The only difference between sample.out and mysample.out is 
+the serial numbers of blocks.
+
+Similar to problem set 7, mytest.out include the following test cases:
+1. Wrong number of inputs
+2. Wrong range of input for probabilities 
+(probNak, probFickle and probExtend)
+3. Small inputs for probabilities
+(probNak = 0.0, probFickle = 0.0, probExtend = 0.0)
+4. Large inputs for probabilities
+(probNak = 1.0, probFickle = 1.0, probExtend = 1.0)
+5. Edge cases for probabilities
+(probNak + probFickle >=1)
+6. Intermediate input cases
+
+
+
