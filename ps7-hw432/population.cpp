@@ -32,9 +32,6 @@ Population(int n,double nak, double fic, double extend){
 	Blockchain bc0(genesis); 
 
 	for (int i = 0; i < numAgents; i++){
-		// choose the initial choice value  ??
-		// by comparing probOne with random double r1
-		// double r1 = dRandom();
 		// choose the agent type 
 		// by comparing probFickle and probCrowd with random double r2 and r3
 		double r = dRandom();
@@ -95,11 +92,6 @@ sendMessage(int sender, int receiver){
 	agents[receiver]->update(agents[sender]->choice());
 	// the updated choice in receiver
 	Blockchain updated = agents[receiver]->choice(); 
-	// update numOne ??
-	/* if(updated != orig){
-		if (orig == 0) numOne++;
-		else numOne--;
-	} */
 }
 
 

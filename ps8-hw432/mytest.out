@@ -3818,3 +3818,201 @@ Agent 9 choice:  [0,2] [1,84] [2,125] [3,134] [4,214] [5,246] [6,258] [7,286] [8
 
 ---------------------------------------------------------------
 Normal termination.
+
+
+
+7. Edge cases for numAgents(=0, =1) and maxRounds (=0,=1).
+
+
+./blockchain 0 100 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:52:27
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! The number of agents should be at least 1. 
+
+
+./blockchain 0 100 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:52:27
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Wrong input! The number of agents should be at least 1. 
+[hw432@monkey ps8-hw432]$ 
+[hw432@monkey ps8-hw432]$ ./blockchain 1 10 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:52:40
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1544586760
+   numAgents:     1
+   maxRounds:    10
+     probNak:    0.5
+  probFickle:   0.5
+  probExtend:    0.5
+
+Population statistics:
+      numNak:      0
+   numFickle:      0
+    numCrowd:      1
+     numOnes:      0
+  probExtend:    0.5
+
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2]
+
+Starting simulation with probExtend = 0.5
+  extend(0)
+  New blockchain:  [0,2] [1,13]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13]
+  extend(0)
+  New blockchain:  [0,2] [1,13] [2,22]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13] [2,22]
+  extend(0)
+  New blockchain:  [0,2] [1,13] [2,22] [3,31]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13] [2,22] [3,31]
+  extend(0)
+  New blockchain:  [0,2] [1,13] [2,22] [3,31] [4,40]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13] [2,22] [3,31] [4,40]
+  extend(0)
+  New blockchain:  [0,2] [1,13] [2,22] [3,31] [4,40] [5,49]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13] [2,22] [3,31] [4,40] [5,49]
+  extend(0)
+  New blockchain:  [0,2] [1,13] [2,22] [3,31] [4,40] [5,49] [6,58]
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2] [1,13] [2,22] [3,31] [4,40] [5,49] [6,58]
+Current blockchain choices after 10 rounds:
+Agent 0 choice:  [0,2] [1,13] [2,22] [3,31] [4,40] [5,49] [6,58]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+
+./blockchain 10 0 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:52:52
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1544586772
+   numAgents:     10
+   maxRounds:    0
+     probNak:    0.5
+  probFickle:   0.5
+  probExtend:    0.5
+
+Population statistics:
+      numNak:      3
+   numFickle:      0
+    numCrowd:      7
+     numOnes:      0
+  probExtend:    0.5
+
+Inventory: 1 active blockchain(s):
+  10 copies of   [0,2]
+
+Starting simulation with probExtend = 0.5
+Current blockchain choices after 0 rounds:
+Agent 0 choice:  [0,2]
+Agent 1 choice:  [0,2]
+Agent 2 choice:  [0,2]
+Agent 3 choice:  [0,2]
+Agent 4 choice:  [0,2]
+Agent 5 choice:  [0,2]
+Agent 6 choice:  [0,2]
+Agent 7 choice:  [0,2]
+Agent 8 choice:  [0,2]
+Agent 9 choice:  [0,2]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+
+./blockchain 5 1 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:53:01
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1544586781
+   numAgents:     5
+   maxRounds:    1
+     probNak:    0.5
+  probFickle:   0.5
+  probExtend:    0.5
+
+Population statistics:
+      numNak:      3
+   numFickle:      0
+    numCrowd:      2
+     numOnes:      0
+  probExtend:    0.5
+
+Inventory: 1 active blockchain(s):
+  5 copies of    [0,2]
+
+Starting simulation with probExtend = 0.5
+  sendMessage(1, 4)
+Current blockchain choices after 1 rounds:
+Agent 0 choice:  [0,2]
+Agent 1 choice:  [0,2]
+Agent 2 choice:  [0,2]
+Agent 3 choice:  [0,2]
+Agent 4 choice:  [0,2]
+
+---------------------------------------------------------------
+Normal termination.
+
+
+./blockchain 1 1 0.5 0.5 0.5
+
+---------------------------------------------------------------
+  Hao Wu
+  CPSC 527
+  Tue Dec 11 2018 22:53:13
+---------------------------------------------------------------
+Welcome to Consensus Simulator!
+Using seed: 1544586793
+   numAgents:     1
+   maxRounds:    1
+     probNak:    0.5
+  probFickle:   0.5
+  probExtend:    0.5
+
+Population statistics:
+      numNak:      1
+   numFickle:      0
+    numCrowd:      0
+     numOnes:      0
+  probExtend:    0.5
+
+Inventory: 1 active blockchain(s):
+  1 copies of    [0,2]
+
+Starting simulation with probExtend = 0.5
+Current blockchain choices after 1 rounds:
+Agent 0 choice:  [0,2]
+
+---------------------------------------------------------------
+Normal termination.
+

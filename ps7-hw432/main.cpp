@@ -53,6 +53,9 @@ void run(int argc, char* argv[]) {
 	if (probCrowd > 1 || probCrowd < 0){
 		fatal("Wrong input! The probability of selecting a Crowd agent should be in range [0,1].");
 	}
+	if (numAgents < 1){
+		fatal("Wrong input! The number of agents should be at least 1. ");
+	}
 	// check if seed is provided 
 	if (argc == 6){
 		seed = time(0);

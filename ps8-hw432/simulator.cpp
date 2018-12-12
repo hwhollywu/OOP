@@ -41,7 +41,7 @@ run(){
 		if (probExtend > r){
 			// to extend: choose an agent at random
 			ppl->extend(u1);
-		}else{
+		}else if (n > 1){
 			// to update: choose another receiver at random
 			int u2 = uRandom(n - 1);
 			//  keep sender and receiver distinct

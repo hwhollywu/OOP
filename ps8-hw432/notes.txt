@@ -81,6 +81,9 @@ Similar to problem set 7, mytest.out include the following test cases:
 5. Edge cases for probabilities
 (probNak + probFickle >=1)
 6. Intermediate input cases
+7. Edge cases for numAgents(=0, =1) and maxRounds (=0,=1).
+The simulator only extends when there is only one agent
+and denies to operate when there is no agent.
 
 
 
