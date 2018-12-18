@@ -218,8 +218,73 @@ Normal termination.
 ==2204== For counts of detected and suppressed errors, rerun with: -v
 ==2204== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
+Test3: Assigning other blockchains based on test1, 
+automatically delete blocks
+---------------------------------------------------------------
+	Hao Wu
+	CPSC 527
+	Mon Dec  3 2018	10:44:06
+---------------------------------------------------------------
+Welcome to Blockchain World!
+Type 'H' for user instructions.
+Please enter your command: E1
+Extending Block 1
+Please enter your command: E2
+Extending Block 2
+Please enter your command: E1
+Extending Block 1
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1] [1,2] [2,4]
+Blockchain 2:  [0,1] [1,3]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: A10
+Assigning Block 1 to be equal to Block 0
+Please enter your command: A20
+Assigning Block 2 to be equal to Block 0
+Please enter your command: P
+Printing out blockchains ..
+Blockchain 0:  [0,1]
+Blockchain 1:  [0,1]
+Blockchain 2:  [0,1]
+Blockchain 3:  [0,1]
+Blockchain 4:  [0,1]
+Blockchain 5:  [0,1]
+Blockchain 6:  [0,1]
+Blockchain 7:  [0,1]
+Blockchain 8:  [0,1]
+Blockchain 9:  [0,1]
+Please enter your command: Q
+Program exit.
+---------------------------------------------------------------
+Normal termination.
+==23261== 
+==23261== HEAP SUMMARY:
+==23261==     in use at exit: 4 bytes in 1 blocks
+==23261==   total heap usage: 21 allocs, 20 frees, 81,894 bytes allocated
+==23261== 
+==23261== LEAK SUMMARY:
+==23261==    definitely lost: 0 bytes in 0 blocks
+==23261==    indirectly lost: 0 bytes in 0 blocks
+==23261==      possibly lost: 0 bytes in 0 blocks
+==23261==    still reachable: 4 bytes in 1 blocks
+==23261==         suppressed: 0 bytes in 0 blocks
+==23261== Rerun with --leak-check=full to see details of leaked memory
+==23261== 
+==23261== For counts of detected and suppressed errors, rerun with: -v
+==23261== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-Test3: Invalid inputs for assigning and extending
+
+
+
+Test4: Invalid inputs for assigning and extending
 
 ---------------------------------------------------------------
 	Hao Wu

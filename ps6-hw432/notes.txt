@@ -55,7 +55,9 @@ test.out include the following test cases:
 Test0: Produce an initial blockchain using print
 Test1: Produce a blockchain like the one in Figure 1
 Test2: Assigning other blockchains based on test1
-Test3: Invalid commands testing, including invalid inputs 
+Test3: Assigning other blockchains based on test1, 
+automatically delete blocks
+Test4: Invalid commands testing, including invalid inputs 
 for assigning and extending
 
 
